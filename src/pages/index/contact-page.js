@@ -1,4 +1,4 @@
-import NavigationBar from "../components/navigation-bar/navigation-bar";
+import NavigationBar from "../../components/navigation-bar/navigation-bar";
 
 function ContactPage() {
     return(
