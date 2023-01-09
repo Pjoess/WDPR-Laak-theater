@@ -31,7 +31,7 @@ function NavigationBar() {
                         <a className="nav-link" href="tickets">Tickets</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="overons">Over Ons</a>
+                        <a className="nav-link" href="aboutus">Over Ons</a>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" href="contact">Contact</a>
