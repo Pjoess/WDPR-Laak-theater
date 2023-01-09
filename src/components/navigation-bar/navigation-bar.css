@@ -1,0 +1,39 @@
+/* Navbar */
+.navbar{
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.user{
+    float: right;
+    padding-right: 1%;
+}
+.nav-link{
+    color: black;
+    text-align: center;
+    width: 100px;
+    font-weight: 600;
+    border-radius: 15px;
+    margin-right: 6%;
+    /* transition: background-color 0.4s linear; */
+}
+.nav-link:hover{
+    background-color: #E2E2E2;
+    /* color: white; */
+    border-radius: 15px;
+    /* transition: background-color 0.4s linear; */
+}
+.navbar .btn{
+    border-radius: 15px;
+    font-weight: 600;
+    width: 100px;
+}
+
+/* Logo */
+.navbar img{
+    margin: 5px 20px 5px 10px;
+    width: 40px;
+    height: auto;
+}
+.logo{
+    padding: 0;
+}
