@@ -11,31 +11,31 @@ export default function FooterComponent(){
                   <div className="row text-center d-flex justify-content-center pt-5">
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link">Over ons</a>
+                        <a href="#!" className="footer-link" alt="over ons link">Over ons</a>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link">Tickets</a>
+                        <a href="#!" className="footer-link" alt="tickets link">Tickets</a>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link">Contact</a>
+                        <a href="#!" className="footer-link" alt="contact link">Contact</a>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link">Registreer</a>
+                        <a href="#!" className="footer-link" alt="registreer link">Registreer</a>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link">Login</a>
+                        <a href="#!" className="footer-link" alt="login link">Login</a>
                       </h6>
                     </div>
                   </div>
@@ -57,7 +57,7 @@ export default function FooterComponent(){
                 </section>
 
                 <section className="text-center mb-4">
-                  <a href="" className=" me-4">
+                  <a href="" className=" me-4" alt="home link logo theater laak">
                     <img src="images/logo.png" alt="Logo Theater Laak"/>
                   </a>
                 </section>

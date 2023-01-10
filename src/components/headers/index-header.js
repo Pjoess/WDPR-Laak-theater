@@ -12,56 +12,24 @@ export default function IndexHeader(){
                         <div className="col-12 header-item" id="img">
                             <h1>Theater Laak</h1>
                         </div>
-                        <div className="col-12 header-item">
-                            <p className="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                <br/>Aenean commodo ligula eget dolor. 
-                                <br/>Aenean massa. 
+                        <div className="col-12 header-item" id="index-header-text">
+                            <p className="shadow">Voel je thuis bij Laak Theater!
+                                <br/>Beleef de beste momenten met onze voorstellingen.
+                                <br/>
                                 <br/>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                             </p>
                         </div>
                         <div className="col-12 header-item">
     
-                            <button type="button" className="btn btn-outline-light btn-lg download-button shadow">
+                            <button type="button" className="btn btn-outline-light btn-lg download-button shadow" alt="doneer link">
                             <EnvelopeHeart/> Doneer
                             </button>
     
-                            <button type="button" className="btn btn-outline-light btn-lg download-button shadow">
+                            <button type="button" className="btn btn-outline-light btn-lg download-button shadow" alt="tickets bestellen link">
                             <TicketPerforated/> Bestel Tickets
                             </button>
                         </div>
                     </div>
-                </div>
-    
-    
-    
-                <div className="informatie">
-    
-                        <div className="container text-center cards">
-    
-                            <div className="col-lg-6 collum">
-                                <div className="card" >
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                                </div>
-                            </div>
-    
-    
-                            <div className="col-lg-6 collum">
-                                <div className="card">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                                </div>
-                            </div>
-    
-                        </div>
                 </div>
         </div>
     );

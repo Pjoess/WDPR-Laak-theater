@@ -1,0 +1,27 @@
+#contacthead .contact-header{
+    height: fit-content;
+    padding: 0;
+    font-weight: 600;
+    font-size: large;
+    color: white;
+}
+
+#contacthead{
+    padding: 2rem 10%;
+    /* padding: 2rem 7%; */
+    background-image: url("../../../public/images/contactheader.jpg");
+    height: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#contacthead h1{
+    font-weight: 400;
+    font-size: 100px;
+    font-family: 'Acme', sans-serif;;
+    text-shadow: 1px 1px 1px black;
+}
+
+#contact-h1{
+    margin-top: 150px;
+}
