@@ -6,8 +6,10 @@ import CartPage from "./pages/cart/cart-page"
 import IndexPage from './pages/index/index-page';
 import AboutUs from './pages/index/aboutUs-page';
 import Tickets from './pages/index/ticket-page';
+import { useState } from "react";
 
 function App() {
+  
   return (
     <div className="App">
       <Routes>
@@ -16,7 +18,8 @@ function App() {
         <Route path="signup" element={ <SignupPage/> } />
         <Route path="cart" element={ <CartPage/> } />
         <Route path="aboutus" element={ <AboutUs/> } />
-        <Route path="tickets" element={ <Tickets/> } />
+        <Route path="tickets" element={ <Tickets/> } />        
+        <Route path="registreer" element={ <SignupPage/> } />
       </Routes>
     </div>
   );
