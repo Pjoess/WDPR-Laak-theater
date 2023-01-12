@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom"
-import ContactPage from "./pages/index/contact-page";
+import ContactPage from "./pages/contact/contact-page";
 import SignupPage from './pages/signup/signup-page';
 import CartPage from "./pages/cart/cart-page"
 import IndexPage from './pages/index/index-page';
-import AboutUs from './pages/index/aboutUs-page';
-import Tickets from './pages/index/ticket-page';
+import AboutUs from './pages/about-us/about-us-page';
+import Tickets from './pages/ticket/ticket-page';
 
 function App() {
   return (
