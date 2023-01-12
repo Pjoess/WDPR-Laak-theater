@@ -1,18 +1,7 @@
 import './navigation-bar.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 
 function NavigationBar() {
     return(
-        // <Navbar bg="light">
-        //     <Nav>
-        //         <Nav.Link href="/">Home</Nav.Link>
-        //         <Nav.Link href="tickets">Tickets</Nav.Link>
-        //         <Nav.Link href="over-ons">Over Ons</Nav.Link>
-        //         <Nav.Link href="contact">Contact</Nav.Link>
-        //     </Nav>
-        // </Navbar>
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
@@ -36,7 +25,6 @@ function NavigationBar() {
                       <li className="nav-item">
                         <a className="nav-link" href="contact">Contact</a>
                       </li>
-
                     </ul>
                     <ul className="navbar-nav text-right user">
                         <li className="nav-item">
