@@ -28,7 +28,7 @@ function NavigationBar() {
                     </ul>
                     <ul className="navbar-nav text-right user">
                         <li className="nav-item">
-                            <a className="nav-link" href="registreer">Registreer</a>
+                            <a className="nav-link" href="signup">Registreer</a>
                         </li>
                         <li className="nav-item">
                           <button type="button" className="btn btn-md btn-outline-dark">Login</button>
