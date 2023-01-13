@@ -6,6 +6,7 @@ import CartPage from "./pages/cart/cart-page"
 import IndexPage from './pages/index/index-page';
 import AboutUs from './pages/about-us/about-us-page';
 import Tickets from './pages/ticket/ticket-page';
+import LoginPage from './pages/login/login-page'
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<IndexPage/>} />
         <Route path="contact" element={ <ContactPage/> } />
-        <Route path="signup" element={ <SignupPage/> } />
         <Route path="cart" element={ <CartPage/> } />
         <Route path="aboutus" element={ <AboutUs/> } />
         <Route path="tickets" element={ <Tickets/> } />
+        <Route path="signup" element={ <SignupPage/> } />
+        <Route path="login" element={ <LoginPage/> } />
       </Routes>
     </div>
   );
