@@ -7,8 +7,8 @@ export default function SignupPage() {
     return (
         <div>
             <NavigationBar />
-            <div class="container">
-                <h3 class="h3 mb-3 font-weight-normal">Registreren</h3>
+            <div className="container">
+                <h1 className="h1 mt-3 mb-3 font-weight-normal">Registreren</h1>
 
                 {false &&
                     <div class="mb-3">
