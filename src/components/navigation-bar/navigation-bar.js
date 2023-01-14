@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import './navigation-bar.css';
 
 function NavigationBar() {
@@ -28,10 +29,10 @@ function NavigationBar() {
                     </ul>
                     <ul className="navbar-nav text-right user">
                         <li className="nav-item">
-                            <a className="nav-link" href="registreer">Registreer</a>
+                            <Link to="/signup" className="nav-link">Registreer</Link>
                         </li>
                         <li className="nav-item">
-                          <button type="button" className="btn btn-md btn-outline-dark">Login</button>
+                          <Link to="/login" className="btn btn-md btn-outline-dark">Log in</Link>
                       </li>
                     </ul>
                   </div>
