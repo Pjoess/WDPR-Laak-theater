@@ -3,17 +3,12 @@ import React from "react";
 import FooterComponent from "../footer/footer";
 import './programming.css'
 import useData from "../../hooks/progamming/use-programming";
-import handleImport from "../../hooks/progamming/upload-programming";
 import { useState } from "react";
 
 function ProgrammingBody() {
 
     const { data, state, handleSubmit, handleChange } = useData();
-    const [file, setFile] = useState(null);
 
-    const handleFileChange = (e) => {
-      setFile(e.target.files[0]);
-    };
 
     return(
         <>
@@ -47,10 +42,7 @@ function ProgrammingBody() {
                         </tbody>
                     </table>
                 </div>
-                {/* <div className="form">
-                    <input type="file" accept=".csv" onChange={handleFileChange} />
-                    <button onClick={() => handleImport(file)}>Upload</button>
-                </div> */}
+
             </div>
         </>
     );
