@@ -7,7 +7,7 @@ export default function useCards() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("/api/Artist");
+        const response = await axios.get("http://localhost:7002/api/Artist/artist");
         setCardData(response.data);
       } catch (error) {
         console.error(error);

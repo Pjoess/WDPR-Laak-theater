@@ -17,20 +17,20 @@ function CardContainerArtists() {
       </div>
 
       <nav aria-label="...">
-      <ul class="pagination">
-        <li class="page-item disabled">
-          <a class="page-link">Previous</a>
+      <ul className="pagination">
+        <li className="page-item disabled">
+          <a className="page-link">Previous</a>
         </li>
 
-        <li class="page-item active">
-          <a class="page-link" href="artists">1</a>
+        <li className="page-item active">
+          <a className="page-link" href="artists">1</a>
         </li>
-        <li class="page-item">
-          <a class="page-link" href="bands">2</a>
+        <li className="page-item">
+          <a className="page-link" href="bands">2</a>
         </li>
 
-        <li class="page-item">
-          <a class="page-link" href="bands">Next</a>
+        <li className="page-item">
+          <a className="page-link" href="bands">Next</a>
         </li>
       </ul>
       </nav>
