@@ -1,6 +1,6 @@
 function NavigationBarMenu(){
     return(
-
+        <div>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                     <a className="nav-link" href="/">Home</a>
@@ -23,7 +23,7 @@ function NavigationBarMenu(){
                     <button type="button" className="btn btn-md btn-outline-dark">Login</button>
                 </li>
             </ul>
-
+        </div>
     )
 
 }

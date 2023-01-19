@@ -19,15 +19,8 @@ function LoginPage() {
       return
     }
 
-    if (!passwordRegex.test(password)) {
-      setError(
-        "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten."
-      )
-      return
-    }
-
     try {
-      const response = await axios.post("http://api/login", {
+      const response = await axios.post("http://localhost:7002/login", {
         username,
         password,
       })
@@ -41,6 +34,7 @@ function LoginPage() {
     }
   }
 
+/*
   useEffect(() => {
     // runt elke keer dat de wachtwoord is veranderd
     function handlePasswordChange() {
@@ -54,6 +48,7 @@ function LoginPage() {
     }
     handlePasswordChange()
   }, [password])
+*/
 
   return (
     <div>
@@ -77,9 +72,7 @@ function LoginPage() {
             </div>
           )}
           <label htmlFor="password">
-            Wachtwoord <br />
-            (moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1
-            cijfer en 8 tekens bevatten):
+            Wachtwoord:
           </label>
           <input
             type="password"

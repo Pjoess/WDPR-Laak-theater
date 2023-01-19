@@ -1,16 +1,15 @@
 import NavigationBar from "../../components/navigation-bar/navigation-bar"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import FooterComponent from "../../components/footer/footer"
 import axios from "axios"
 
-export default function SignupPage() {
+export default function SignUpPage() {
     const [username, setUsername] = useState("")
-    const [naam, setNaam] = useState("")
+    const [name, setName] = useState("")
     const [birthday, setBirthday] = useState("")
     const [password1, setPassword1] = useState("")
     const [password2, setPassword2] = useState("")
     const [error, setError] = useState("")
-    // TODO: replace true/false with check for if the user is already logged in
 
     const passwordRegex = new RegExp(
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=.*[0-9])(?=.{8,})"
@@ -18,9 +17,20 @@ export default function SignupPage() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        const dateFormat = /^\d{2}\/\d{2}\/\d{4}$/;
 
-        if (!username || !password1 && !password2) {
-            setError("Voer een gebruikersnaam en wachtwoord in.")
+        if(!name){
+            setError("Voer je naam in.")
+            return
+        }
+
+        if (!username) {
+            setError("Voer een gebruikersnaam in.")
+            return
+        }
+
+        if (!dateFormat.test(birthday)) {
+            setError("Voer een geldig geboortedatum in met de formaat DD/MM/YYYY ( DAG/MAAND/JAAR )");
             return
         }
 
@@ -29,37 +39,31 @@ export default function SignupPage() {
                 "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten."
             )
             return
+        } else if (!password1 && !password2){
+            setError(
+                "Wachtwoord en bevestig wachtwoord moeten gelijk zijn aan elkaar."
+            )
+            return
         }
 
         try {
-            const response = await axios.post("http://api/login", {
-                username,
-                password1,
-                password2,
+            const response = await axios.post("http://localhost:7002/api/register/user", {
+                "userName": username,
+                "passwordHash": password1,
+                "name": name,
+                "role": "user",
+                "orders": null,
             })
             if (response.data.status === "success") {
-                // TODO: handle successful login
+                // TODO: handle successful register
+                setError("Correct")
             } else {
                 setError("Incorrecte gebruikersnaam of wachtwoord.")
             }
         } catch (error) {
-            setError("Er is een fout opgetreden bij het inloggen.")
+            setError("Er is een fout opgetreden bij het registreren.")
         }
     }
-
-    useEffect(() => {
-        // runt elke keer dat de wachtwoord is veranderd
-        function handlePasswordChange() {
-            if (!passwordRegex.test(password1) && !passwordRegex.test(password2)) {
-                setError(
-                    "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten!"
-                )
-            } else {
-                setError("")
-            }
-        }
-        handlePasswordChange()
-    }, [password1, password2])
     return (
         <div>
             <NavigationBar />
@@ -68,28 +72,28 @@ export default function SignupPage() {
 
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="name">Naam:</label>
-                    <input type="text" id="name" value={naam} onChange={(event) => setNaam(event.target.value)} aria-describedby="name-error" className="form-control mb-3" />
-                    {!naam && (
+                    <input type="text" id="name" value={name} onChange={(event) => setName(event.target.value)} aria-describedby="name-error" className="form-control mb-3" />
+                    {!name && (
                         <div id="name-error" className="alert alert-warning">
                             Voer alstublieft een naam in.
                         </div>
                     )}
                     <label htmlFor="userName">Username:</label>
                     <input type="text" id="userName" value={username} onChange={(event) => setUsername(event.target.value)} aria-describedby="username-error" className="form-control mb-3" />
-                    {!naam && (
+                    {!name && (
                         <div id="name-error" className="alert alert-warning">
                             Voer alstublieft een gebruikersnaam in.
                         </div>
                     )}
                     <label for="birthday">Birthday:</label>
-                    <input type="text" id="birthday" placeholder="31-06-1998" value={birthday} onChange={(event) => setBirthday(event.target.value)} aria-describedby="birthday-error" className="form-control mb-3" />
+                    <input type="text" id="birthday" placeholder="31/06/1998" value={birthday} onChange={(event) => setBirthday(event.target.value)} aria-describedby="birthday-error" className="form-control mb-3" />
                     {!birthday && (
                         <div className="alert alert-warning" id="birthday-error">
                             Voer alstublieft uw geboortedatum in.
                         </div>
                     )}
 
-                    <label htmlFor="password1"> Wachtwoord <br /> (moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten):</label>
+                    <label htmlFor="password1"> Wachtwoord <br /> ( Moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten ):</label>
                     <input type="password1" id="password1" value={password1} onChange={(event) => { setPassword1(event.target.value) }} aria-describedby="password1-error" className="form-control" />
                     <br />
                     {!password1 && (
@@ -98,9 +102,9 @@ export default function SignupPage() {
                         </div>
                     )}
 
-                    <label htmlFor="password2"> Bevestig wachtwoord <br /> (moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten):</label>
+                    <label htmlFor="password2"> Bevestig wachtwoord:</label>
                     <input type="password2" id="password2" value={password2} onChange={(event) => { setPassword2(event.target.value) }} aria-describedby="password2-error" className="form-control mb-3" />
-                    {!(password1 == password2) &&(
+                    {!(password1 === password2) &&(
                         <div className="alert alert-warning" id="password-error">
                             Voer alstublieft opnieuw uw zelfde wachtwoord in.
                         </div>
@@ -112,7 +116,7 @@ export default function SignupPage() {
                         </div>
                     )}
                     <button type="submit" className="btn btn-primary mb-3">
-                        Inloggen
+                        Registreren
                     </button>
                 </form>
             </div>

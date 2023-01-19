@@ -1,16 +1,16 @@
 import "./App.css"
 import { Routes, Route } from "react-router-dom"
 import ContactPage from "./pages/contact/contact-page"
-import SignupPage from "./pages/signup/signup-page"
+import SignUpPage from "./pages/sign-up/sign-up-page"
 import CartPage from "./pages/cart/cart-page"
 import IndexPage from "./pages/index/index-page"
 import AboutUs from "./pages/about-us/about-us-page"
 import Tickets from "./pages/ticket/ticket-page"
 import LoginPage from "./pages/login/login-page"
-import Programming from "./pages/Programmering/programming"
-import EmployeeBoard from "./pages/Medewerker/employee"
-import CardContainerArtists from "./pages/Medewerker/artists"
-import CardContainerBands from "./pages/Medewerker/bands"
+import Programming from "./pages/programming/programming"
+import EmployeeBoard from "./pages/employee/employee"
+import CardContainerArtists from "./pages/employee/artists"
+import CardContainerBands from "./pages/employee/bands"
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="aboutus" element={<AboutUs />} />
         <Route path="tickets" element={<Tickets />} />
-        <Route path="signup" element={<SignupPage />} />
+        <Route path="signup" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="programmering" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
