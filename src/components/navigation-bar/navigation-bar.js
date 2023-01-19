@@ -20,7 +20,7 @@ function NavigationBar() {
                         <a className="nav-link" href="/">Home</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link" href="tickets">Tickets</a>
+                        <a className="nav-link" href="tickets">Programma</a>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" href="aboutus">Over Ons</a>
