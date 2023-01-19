@@ -110,7 +110,7 @@ export default function SignUpPage() {
                     )}
 
                     <label htmlFor="password1"> Wachtwoord <br /> ( Moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten ):</label>
-                    <input type="password1" id="password1" value={password1} onChange={(event) => { setPassword1(event.target.value) }} aria-describedby="password1-error" className="form-control" />
+                    <input type="password" id="password1" value={password1} onChange={(event) => { setPassword1(event.target.value) }} aria-describedby="password1-error" className="form-control" />
                     <br />
                     {!password1 && (
                         <div className="alert alert-warning" id="password1-error">
@@ -119,7 +119,7 @@ export default function SignUpPage() {
                     )}
 
                     <label htmlFor="password2"> Bevestig wachtwoord:</label>
-                    <input type="password2" id="password2" value={password2} onChange={(event) => { setPassword2(event.target.value) }} aria-describedby="password2-error" className="form-control mb-3" />
+                    <input type="password" id="password2" value={password2} onChange={(event) => { setPassword2(event.target.value) }} aria-describedby="password2-error" className="form-control mb-3" />
                     {!(password1 === password2) && (
                         <div className="alert alert-warning" id="password-error">
                             Voer alstublieft opnieuw uw zelfde wachtwoord in.
