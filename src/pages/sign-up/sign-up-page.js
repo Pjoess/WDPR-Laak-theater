@@ -54,8 +54,10 @@ export default function SignUpPage() {
                 "role": "user",
                 "orders": null,
             })
+            // TODO: A check to see what the response is
             if (response.data.status === "success") {
                 // TODO: handle successful register
+                // TODO: add redirect to login-page.js
                 setError("Correct")
             } else {
                 setError("Incorrecte gebruikersnaam of wachtwoord.")
