@@ -55,7 +55,7 @@ export default function SignUpPage() {
         }
 
         try {
-            const response = await axios.post("http://localhost:7002/api/register/user", {
+            const response = await axios.post(`${process.env.REACT_APP_API}/api/register/user`, {
                 "name": name,
                 "userName": username,
                 "email": email,

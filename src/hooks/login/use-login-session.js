@@ -8,21 +8,6 @@ export function useLoginSession() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // useEffect(() => {
-  //   // fetch de user informatie vanuit de server
-  //   async function fetchUser() {
-  //     try {
-  //       const response = await axios.get("http://localhost:7002/api/user")
-  //       setUser(response.data)
-  //     } catch (err) {
-  //       setError(err)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-  //   fetchUser()
-  // }, [])
-
   useEffect(() => {
     const token = localStorage.getItem("jwt")
     if (token && !user) {
@@ -33,7 +18,7 @@ export function useLoginSession() {
   const login = useCallback((username, password) => {
     setLoading(true)
     axios
-      .post("http://localhost:7002/api/Login/user", {
+      .post(`${process.env.REACT_APP_API}/api/Login/user`, {
         "username": username,
         "password": password,
       })
