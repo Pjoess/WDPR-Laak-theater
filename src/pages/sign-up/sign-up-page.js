@@ -2,10 +2,13 @@ import NavigationBar from "../../components/navigation-bar/navigation-bar"
 import React, { useState } from "react"
 import FooterComponent from "../../components/footer/footer"
 import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 
 export default function SignUpPage() {
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
     const [birthday, setBirthday] = useState("")
     const [password1, setPassword1] = useState("")
     const [password2, setPassword2] = useState("")
@@ -19,13 +22,18 @@ export default function SignUpPage() {
         event.preventDefault()
         const dateFormat = /^\d{2}\/\d{2}\/\d{4}$/;
 
-        if(!name){
+        if (!name) {
             setError("Voer je naam in.")
             return
         }
 
         if (!username) {
             setError("Voer een gebruikersnaam in.")
+            return
+        }
+
+        if (!email) {
+            setError("Voer een email in.")
             return
         }
 
@@ -39,7 +47,7 @@ export default function SignUpPage() {
                 "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten."
             )
             return
-        } else if (!password1 && !password2){
+        } else if (!password1 && !password2) {
             setError(
                 "Wachtwoord en bevestig wachtwoord moeten gelijk zijn aan elkaar."
             )
@@ -48,19 +56,18 @@ export default function SignUpPage() {
 
         try {
             const response = await axios.post("http://localhost:7002/api/register/user", {
-                "userName": username,
-                "passwordHash": password1,
                 "name": name,
+                "userName": username,
+                "email": email,
+                "passwordHash": password1,
                 "role": "user",
                 "orders": null,
             })
-            // TODO: A check to see what the response is
-            if (response.data.status === "success") {
-                // TODO: handle successful register
-                // TODO: add redirect to login-page.js
-                setError("Correct")
-            } else {
-                setError("Incorrecte gebruikersnaam of wachtwoord.")
+            if (response.status === 200) {
+                setError("Registratie was succesvol. Log alsjeblieft in.")
+                navigate("/login")
+            } else if (response.status === 400) {
+                setError("Deze gebruikersnaam is al in gebruik. Kies een ander gebruikersnaam.")
             }
         } catch (error) {
             setError("Er is een fout opgetreden bij het registreren.")
@@ -87,7 +94,14 @@ export default function SignUpPage() {
                             Voer alstublieft een gebruikersnaam in.
                         </div>
                     )}
-                    <label for="birthday">Birthday:</label>
+                    <label htmlFor="email">Email:</label>
+                    <input type="text" id="email" value={email} onChange={(event) => setEmail(event.target.value)} aria-describedby="email-error" className="form-control mb-3" />
+                    {!name && (
+                        <div id="email-error" className="alert alert-warning">
+                            Voer alstublieft een email in.
+                        </div>
+                    )}
+                    <label htmlFor="birthday">Birthday:</label>
                     <input type="text" id="birthday" placeholder="31/06/1998" value={birthday} onChange={(event) => setBirthday(event.target.value)} aria-describedby="birthday-error" className="form-control mb-3" />
                     {!birthday && (
                         <div className="alert alert-warning" id="birthday-error">
@@ -96,7 +110,7 @@ export default function SignUpPage() {
                     )}
 
                     <label htmlFor="password1"> Wachtwoord <br /> ( Moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten ):</label>
-                    <input type="password1" id="password1" value={password1} onChange={(event) => { setPassword1(event.target.value) }} aria-describedby="password1-error" className="form-control" />
+                    <input type="password" id="password1" value={password1} onChange={(event) => { setPassword1(event.target.value) }} aria-describedby="password1-error" className="form-control" />
                     <br />
                     {!password1 && (
                         <div className="alert alert-warning" id="password1-error">
@@ -105,15 +119,15 @@ export default function SignUpPage() {
                     )}
 
                     <label htmlFor="password2"> Bevestig wachtwoord:</label>
-                    <input type="password2" id="password2" value={password2} onChange={(event) => { setPassword2(event.target.value) }} aria-describedby="password2-error" className="form-control mb-3" />
-                    {!(password1 === password2) &&(
+                    <input type="password" id="password2" value={password2} onChange={(event) => { setPassword2(event.target.value) }} aria-describedby="password2-error" className="form-control mb-3" />
+                    {!(password1 === password2) && (
                         <div className="alert alert-warning" id="password-error">
                             Voer alstublieft opnieuw uw zelfde wachtwoord in.
                         </div>
                     )}
 
                     {error && (
-                        <div class="alert alert-danger" role="alert">
+                        <div className="alert alert-danger" role="alert">
                             {error}
                         </div>
                     )}
