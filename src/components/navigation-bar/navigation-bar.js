@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 import './navigation-bar.css';
+import { useLoginSession } from "../../hooks/login/use-login-session"
 
 function NavigationBar() {
+    const { user } = useLoginSession()
     return(
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -27,6 +29,15 @@ function NavigationBar() {
                         <a className="nav-link" href="contact">Contact</a>
                       </li>
                     </ul>
+                    {user &&
+                    <ul className="navbar-nav text-right user">
+                      <span className="navbar-text">U bent ingelogd als: {user.unique_name}</span>
+                      <li className="nav-item">
+                          <Link to="/logout" className="nav-link">Log uit</Link>
+                      </li>
+                    </ul>
+                    }
+                    {! user &&
                     <ul className="navbar-nav text-right user">
                         <li className="nav-item">
                             <Link to="/signup" className="nav-link">Registreer</Link>
@@ -35,6 +46,7 @@ function NavigationBar() {
                           <Link to="/login" className="btn btn-md btn-outline-dark">Log in</Link>
                       </li>
                     </ul>
+                    }
                   </div>
                 </div>
             </nav>

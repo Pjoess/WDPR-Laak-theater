@@ -56,7 +56,6 @@ function LoginPage() {
       <NavigationBar />
       <div className="container">
         <h1 className="h1 mt-3 mb-3 font-weight-normal">Log in</h1>
-        Huidige user: {user}
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Gebruikersnaam:</label>
           <input

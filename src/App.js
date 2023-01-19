@@ -11,6 +11,7 @@ import Programming from "./pages/programming/programming"
 import EmployeeBoard from "./pages/employee/employee"
 import CardContainerArtists from "./pages/employee/artists"
 import CardContainerBands from "./pages/employee/bands"
+import LogoutPage from "./pages/logout/logout-page"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="tickets" element={<Tickets />} />
         <Route path="signup" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />
+        <Route path="logout" element={<LogoutPage/>}/>
         <Route path="programmering" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
         <Route path="artists" element={<CardContainerArtists/>}/>
