@@ -81,7 +81,7 @@ function LoginPage() {
               {error}
             </div>
           )}
-          <button type="submit" className="btn btn-primary mb-3">
+          <button id="submit" type="submit" className="btn btn-primary mb-3">
             Inloggen
           </button>
         </form>
