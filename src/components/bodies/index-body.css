@@ -1,25 +1,41 @@
 /* BODY */
 .informatie{
-    height: 1000px;
+    height: fit-content;
+    color: white;
 }
-.cards{
+.container .cards{
     padding: 0;
     margin: 0;
 }
 .card{
-    margin: 5% 10% 5% 10%;
-    width: 40rem;
+    margin: 5% 5% 5% 5%;
 }
 .informatie .row{
-    margin: 0;
+    padding: 0 5% 0 7%;
     width: 100%;
 }
-.collum{
-    width: fit-content;
+.informatie .card{
+    margin: 0;
+    padding: 0;
 }
-
-body{
-    background-color: #E2E2E2;
-    overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+.informatie .col{
+    padding: 1% 2% 1% 2%;
+}
+.card-1{
+    background-color: #950D44;
+}
+.card-2{
+    background-color: #D3BBB9;
+}
+.card-3{
+    background-color: #D9BB8B;
+}
+.card-4{
+    background-color: #D791A7;
+}
+.card-5{
+    background-color: #D3BBB9;
+}
+.card-6{
+    background-color: #950D44;
 }

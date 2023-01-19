@@ -1,0 +1,21 @@
+.Agenda-info{
+    margin: 0;
+    padding: 0;
+    background-color: #E2E2E2;
+    align-items: center;
+    height: 2000px;
+}
+.Agenda-info .programming-box{
+    padding: 6%;
+    margin: 4% 6%;
+    background-color: #D3BBB9;
+    height: fit-content;
+}
+.Agenda-info .agenda{
+    width: 100%;
+    height: 10rem;
+    background-color: #950D44;
+}
+.Agenda-info .container-fluid{
+    align-items: center;
+}
