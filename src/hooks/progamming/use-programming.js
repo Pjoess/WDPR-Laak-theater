@@ -4,7 +4,7 @@ export default function useData() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('api/Programming')
+        fetch('http://synchronicity.ddns.net:7002/api/Programming')
             .then(response => response.json())
             .then(data => {
                 setData(data);

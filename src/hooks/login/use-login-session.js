@@ -12,7 +12,7 @@ export function useLoginSession() {
   //   // fetch de user informatie vanuit de server
   //   async function fetchUser() {
   //     try {
-  //       const response = await axios.get("http://localhost:7002/api/user")
+  //       const response = await axios.get("http://synchronicity.ddns.net:7002/api/user")
   //       setUser(response.data)
   //     } catch (err) {
   //       setError(err)
@@ -33,7 +33,7 @@ export function useLoginSession() {
   const login = useCallback((username, password) => {
     setLoading(true)
     axios
-      .post("http://localhost:7002/api/Login/user", {
+      .post("http://synchronicity.ddns.net:7002/api/Login/user", {
         "username": username,
         "password": password,
       })
