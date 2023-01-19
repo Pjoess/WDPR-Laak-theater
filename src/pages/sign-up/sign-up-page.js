@@ -63,34 +63,15 @@ export default function SignUpPage() {
                 "role": "user",
                 "orders": null,
             })
-            if (response.data.status === 200) {
+            if (response.status === 200) {
                 setError("Registratie was succesvol. Log alsjeblieft in.")
                 navigate("/login")
-            } else if (response.data.status === 400) {
+            } else if (response.status === 400) {
                 setError("Deze gebruikersnaam is al in gebruik. Kies een ander gebruikersnaam.")
             }
         } catch (error) {
             setError("Er is een fout opgetreden bij het registreren.")
         }
-        // try {
-        //     const response = await axios.post("http://localhost:7002/api/register/user", {
-        //         "userName": username,
-        //         "passwordHash": password1,
-        //         "name": name,
-        //         "role": "user",
-        //         "orders": null,
-        //     })
-        //     // TODO: A check to see what the response is
-        //     if (response.data.status === "success") {
-        //         // TODO: handle successful register
-        //         // TODO: add redirect to login-page.js
-        //         setError("Correct")
-        //     } else {
-        //         setError("Incorrecte gebruikersnaam of wachtwoord.")
-        //     }
-        // } catch (error) {
-        //     setError("Er is een fout opgetreden bij het registreren.")
-        // }
     }
     return (
         <div>

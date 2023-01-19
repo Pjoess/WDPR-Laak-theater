@@ -34,23 +34,6 @@ function LoginPage() {
       setError("Er is een fout opgetreden bij het inloggen.")
     }    
   }
-
-/*
-  useEffect(() => {
-    // runt elke keer dat de wachtwoord is veranderd
-    function handlePasswordChange() {
-      if (!passwordRegex.test(password)) {
-        setError(
-          "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten!"
-        )
-      } else {
-        setError("")
-      }
-    }
-    handlePasswordChange()
-  }, [password])
-*/
-
   return (
     <div>
       <NavigationBar />
