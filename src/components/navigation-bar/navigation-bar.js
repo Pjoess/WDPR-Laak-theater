@@ -31,7 +31,7 @@ function NavigationBar() {
                     </ul>
                     {user &&
                     <ul className="navbar-nav text-right user">
-                      <span className="navbar-text">U bent ingelogd als: {user.unique_name}</span>
+                      <span id="currentuser" className="navbar-text">U bent ingelogd als: {user.unique_name}</span>
                       <li className="nav-item">
                           <Link to="/logout" className="nav-link">Log uit</Link>
                       </li>
