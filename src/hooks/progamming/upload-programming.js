@@ -41,7 +41,7 @@ export default function handleImport(file) {
         });
         // Send a POST request to the API to import the data
         try {
-            await axios.post('/api/Programming', data);
+            await axios.post('http://localhost:7002/api/Programming/import', data);
             console.log('Data imported successfully!');
         } catch (error) {
             console.log(error);

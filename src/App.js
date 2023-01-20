@@ -9,9 +9,7 @@ import Tickets from "./pages/ticket/ticket-page"
 import LoginPage from "./pages/login/login-page"
 import Programming from "./pages/Programmering/programming"
 import EmployeeBoard from "./pages/Medewerker/employee"
-import CardContainerArtists from "./pages/Medewerker/artists"
-import CardContainerBands from "./pages/Medewerker/bands"
-
+import ArtistPage from "./pages/artist/artist-page"
 
 function App() {
   return (
@@ -26,8 +24,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="programmering" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
-        <Route path="artists" element={<CardContainerArtists/>}/>
-        <Route path="bands" element={<CardContainerBands/>}/>
+        <Route path="artist" element={<ArtistPage/>}/>
       </Routes>
     </div>
   )
