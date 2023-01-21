@@ -34,7 +34,7 @@ function App() {
         {/* Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
         {/*--------------------*/}
-        <Route path="programmering" element={<Programming />} />
+        <Route path="programma" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
         <Route path="artists" element={<CardContainerArtists/>}/>
         <Route path="bands" element={<CardContainerBands/>}/>
