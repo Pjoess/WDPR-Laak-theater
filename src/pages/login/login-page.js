@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import NavigationBar from "../../components/navigation-bar/navigation-bar"
+import { useLoginSession } from "../../hooks/login/use-login-session"
 
 function LoginPage() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const { login, loading, user } = useLoginSession()
 
   const passwordRegex = new RegExp(
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=.*[0-9])(?=.{8,})"
@@ -27,40 +29,16 @@ function LoginPage() {
     }
 
     try {
-      const response = await axios.post("http://api/login", {
-        username,
-        password,
-      })
-      if (response.data.status === "success") {
-        // TODO: handle successful login
-      } else {
-        setError("Incorrecte gebruikersnaam of wachtwoord.")
-      }
+      await login(username, password)
     } catch (error) {
       setError("Er is een fout opgetreden bij het inloggen.")
-    }
+    }    
   }
-
-  useEffect(() => {
-    // runt elke keer dat de wachtwoord is veranderd
-    function handlePasswordChange() {
-      if (!passwordRegex.test(password)) {
-        setError(
-          "Wachtwoord moet minimaal 1 hoofdletter, 1 kleine letter, 1 speciaal teken, 1 cijfer en 8 tekens bevatten!"
-        )
-      } else {
-        setError("")
-      }
-    }
-    handlePasswordChange()
-  }, [password])
-
   return (
     <div>
       <NavigationBar />
       <div className="container">
         <h1 className="h1 mt-3 mb-3 font-weight-normal">Log in</h1>
-
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Gebruikersnaam:</label>
           <input
@@ -99,11 +77,11 @@ function LoginPage() {
           )}
 
           {error && (
-            <div class="alert alert-danger" role="alert">
+            <div className="alert alert-danger" role="alert">
               {error}
             </div>
           )}
-          <button type="submit" className="btn btn-primary mb-3">
+          <button id="submit" type="submit" className="btn btn-primary mb-3">
             Inloggen
           </button>
         </form>

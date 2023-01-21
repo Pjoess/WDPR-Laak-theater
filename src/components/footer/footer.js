@@ -67,10 +67,6 @@ export default function FooterComponent(){
                 © 2022 Copyright: FakeTheater
               </div>
             </footer>
-
-
-
-
         </section>
         </div>
     );

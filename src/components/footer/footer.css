@@ -1,4 +1,8 @@
 /* FOOTER */
+body{
+    padding-bottom: 70px;
+}
+
 .footer{
     background-color: white;
 }
@@ -23,4 +27,12 @@
 .footer p{
     font-weight: 500;
     font-size: medium;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
