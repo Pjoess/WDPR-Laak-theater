@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import NavigationBar from "../../components/navigation-bar/navigation-bar"
 import { useLoginSession } from "../../hooks/login/use-login-session"
+import ReCaptcha from 'react-google-recaptcha'
 
 function LoginPage() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [captchaToken, setCaptchaToken] = useState('')
   const [error, setError] = useState("")
   const { login, loading, user } = useLoginSession()
 
@@ -29,7 +31,7 @@ function LoginPage() {
     }
 
     try {
-      await login(username, password)
+      await login(username, password, captchaToken)
     } catch (error) {
       setError("Er is een fout opgetreden bij het inloggen.")
     }    
@@ -81,6 +83,10 @@ function LoginPage() {
               {error}
             </div>
           )}
+          <ReCaptcha
+            sitekey={process.env.REACT_APP_CAPTCHA_SITEKEY}
+            onChange={(token) => setCaptchaToken(token)}
+          />
           <button id="submit" type="submit" className="btn btn-primary mb-3">
             Inloggen
           </button>

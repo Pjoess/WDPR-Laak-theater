@@ -15,12 +15,13 @@ export function useLoginSession() {
     }
   }, [])
 
-  const login = useCallback((username, password) => {
+  const login = useCallback((username, password, captchaToken) => {
     setLoading(true)
     axios
       .post(`${process.env.REACT_APP_API}/api/Login/user`, {
         "username": username,
         "password": password,
+        "captchaToken": captchaToken,
       })
       .then((response) => { // gebruiker en jwt token zetten
         // setUser(response.data)
