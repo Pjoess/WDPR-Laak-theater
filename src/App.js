@@ -13,6 +13,9 @@ import CardContainerArtists from "./pages/employee/artists"
 import CardContainerBands from "./pages/employee/bands"
 import LogoutPage from "./pages/logout/logout-page"
 import AdminPage from "./admin-pages/admin-page";
+import RoomManagement from "./admin-pages/room-management";
+import UserManagement from "./admin-pages/user-management";
+import EmployeeManagement from "./admin-pages/employee-management";
 
 
 function App() {
@@ -37,6 +40,9 @@ function App() {
         <Route path="bands" element={<CardContainerBands/>}/>
         {/* Admin section */}
         <Route path="admin" element={<AdminPage/>}/>
+        <Route path="admin/zalen" element={<RoomManagement/>}/>
+        <Route path="admin/gebruikers" element={<UserManagement/>}/>
+        <Route path="admin/medewerkers" element={<EmployeeManagement/>}/>
       </Routes>
     </div>
   )

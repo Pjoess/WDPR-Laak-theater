@@ -9,8 +9,8 @@ function MinimalFooter() {
                     <div className="container">
                         <hr className="my-5" />
                         <section className="text-center mb-4">
-                            <a href="/admin" className=" me-4" alt="home link logo theater laak">
-                                <img src="images/logo.png" alt="Logo Theater Laak"/>
+                            <a href="admin" className=" me-4" alt="home link logo theater laak">
+                                <img src="../images/logo.png" alt="Logo Theater Laak"/>
                             </a>
                         </section>
                     </div>
