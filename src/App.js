@@ -12,6 +12,7 @@ import EmployeeBoard from "./pages/employee/employee"
 import CardContainerArtists from "./pages/employee/artists"
 import CardContainerBands from "./pages/employee/bands"
 import LogoutPage from "./pages/logout/logout-page"
+import AdminPage from "./pages/admin/admin-page";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="employee" element={<EmployeeBoard/>}/>
         <Route path="artists" element={<CardContainerArtists/>}/>
         <Route path="bands" element={<CardContainerBands/>}/>
+        <Route path="admin" element={<AdminPage/>}/>
       </Routes>
     </div>
   )
