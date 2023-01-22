@@ -12,10 +12,10 @@ import EmployeeBoard from "./pages/employee/employee"
 import CardContainerArtists from "./pages/employee/artists"
 import CardContainerBands from "./pages/employee/bands"
 import LogoutPage from "./pages/logout/logout-page"
-import AdminPage from "./admin-pages/admin-page";
-import RoomManagement from "./admin-pages/room-management";
-import UserManagement from "./admin-pages/user-management";
-import EmployeeManagement from "./admin-pages/employee-management";
+import AdminPage from "./admin-pages/admin/admin-page";
+import RoomManagement from "./admin-pages/room/room-management";
+import UserManagement from "./admin-pages/user/user-management";
+import EmployeeManagement from "./admin-pages/employee/employee-management";
 import SeatPickerPage from "./pages/seat-picker/seat-picker-page"
 
 

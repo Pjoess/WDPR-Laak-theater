@@ -11,12 +11,9 @@ export default function Programming(){
             <section className="Header">
                 <NavigationBar/>
             </section>
-           
+            <ProgrammingBody/>
             <FetchData/>
-
             <FooterComponent/>
         </>
-
-
     );
 }
