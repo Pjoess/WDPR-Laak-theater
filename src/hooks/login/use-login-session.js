@@ -8,21 +8,6 @@ export function useLoginSession() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // useEffect(() => {
-  //   // fetch de user informatie vanuit de server
-  //   async function fetchUser() {
-  //     try {
-  //       const response = await axios.get("http://synchronicity.ddns.net:7002/api/user")
-  //       setUser(response.data)
-  //     } catch (err) {
-  //       setError(err)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-  //   fetchUser()
-  // }, [])
-
   useEffect(() => {
     const token = localStorage.getItem("jwt")
     if (token && !user) {
@@ -30,15 +15,16 @@ export function useLoginSession() {
     }
   }, [])
 
-  const login = useCallback((username, password) => {
+  const login = useCallback((username, password, captchaToken) => {
     setLoading(true)
     axios
-      .post("http://synchronicity.ddns.net:7002/api/Login/user", {
+      .post(`${process.env.REACT_APP_API}/api/Login/user`, {
         "username": username,
         "password": password,
+        "captchaToken": captchaToken,
       })
       .then((response) => { // gebruiker en jwt token zetten
-        // setUser(response.data)
+        setUser(response.data)
         localStorage.setItem("jwt", response.data.token)
         axios.defaults.headers.common[
           "Authorization"
@@ -49,7 +35,7 @@ export function useLoginSession() {
       })
       .finally(() => {
         setLoading(false)
-        navigate("/tickets")
+        navigate("/programma")
       })
   }, [])
 

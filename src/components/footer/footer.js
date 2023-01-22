@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import React from "react";
 import './footer.css';
 
@@ -11,31 +12,31 @@ export default function FooterComponent(){
                   <div className="row text-center d-flex justify-content-center pt-5">
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="over ons link">Over ons</a>
+                        <a href="/aboutus" className="footer-link" alt="over ons link">Over ons</a>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="tickets link">Tickets</a>
+                        <Link href="/programma" className="footer-link" alt="tickets link">Tickets</Link>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="contact link">Contact</a>
+                        <Link to="/contact" className="footer-link" alt="contact link">Contact</Link>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="registreer link">Registreer</a>
+                        <Link to="/signup" className="footer-link" alt="registreer link">Registreer</Link>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="login link">Login</a>
+                        <Link to="/login" className="footer-link" alt="login link">Login</Link>
                       </h6>
                     </div>
                   </div>
@@ -67,10 +68,6 @@ export default function FooterComponent(){
                 © 2022 Copyright: FakeTheater
               </div>
             </footer>
-
-
-
-
         </section>
         </div>
     );

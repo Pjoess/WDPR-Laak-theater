@@ -1,9 +1,9 @@
 .Agenda-info{
     margin: 0;
     padding: 0;
+    color: white;
     background-color: #E2E2E2;
     align-items: center;
-    height: 2000px;
 }
 .Agenda-info .programming-box{
     padding: 6%;
