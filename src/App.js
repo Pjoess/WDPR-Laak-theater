@@ -16,7 +16,6 @@ import AdminPage from "./admin-pages/admin/admin-page";
 import RoomManagement from "./admin-pages/room/room-management";
 import UserManagement from "./admin-pages/user/user-management";
 import EmployeeManagement from "./admin-pages/employee/employee-management";
-import EditUser from "./hooks/admin/edit-user";
 
 
 function App() {
@@ -34,6 +33,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         {/* Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
+        <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
         {/*--------------------*/}
         <Route path="programma" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
