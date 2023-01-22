@@ -13,7 +13,9 @@ import CardContainerArtists from "./pages/employee/artists"
 import CardContainerBands from "./pages/employee/bands"
 import LogoutPage from "./pages/logout/logout-page"
 import AdminPage from "./admin-pages/admin-page";
-
+import ArtistPage from "./pages/artist/artist-page"
+import ArtistGroupsJoin from "./pages/artist/artist-groups-join"
+import ArtistGroupsEdit from "./pages/artist/artist-groups-edit"
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         {/* Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
+        <Route path="artist" element={<ArtistPage/>}/>
+        <Route path="groupJoin" element={<ArtistGroupsJoin/>}/>
+        <Route path="groupsEdit" element={<ArtistGroupsEdit/>}/>
         {/*--------------------*/}
         <Route path="programmering" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>

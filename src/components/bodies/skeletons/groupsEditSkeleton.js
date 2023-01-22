@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { useAddGroup } from '../../../hooks/groupJoining/useGroupJoin';
-import { useLoginSession } from "../../../hooks/login/use-login-session";
-import GroupList from "./groupsEditSkeleton";
 
-function GroupCard({ id, name, description, type}) {
-    const user = useLoginSession();
+function GroupCard({ id, name, description, type }) {
     const [isLoading, setIsLoading] = useState(false);
     const addGroup = useAddGroup();
     const [artistId, setArtistId] = useState('');
 
     const handleClick = async () => {
         setIsLoading(true);
-        setArtistId(user.Id);
         await addGroup(artistId, id);
         setArtistId('');
         alert("You have joined the group");
@@ -24,11 +20,15 @@ function GroupCard({ id, name, description, type}) {
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">{description}</p>
                 <p className="card-text">{type}</p>
-                <div className="container">
-                </div>
                 <button type="submit" onClick={handleClick} disabled={isLoading}>
-                    {isLoading ? 'Joining...' : 'Join Group'}
+                    {isLoading ? 'Editing...' : 'Edit group'}
                 </button>
+                <form>
+                <label>
+                    Artist ID:
+                    <input type="text" value={artistId} onChange={e => setArtistId(e.target.value)} />
+                </label>
+            </form>
             </div>
         </div>
     );

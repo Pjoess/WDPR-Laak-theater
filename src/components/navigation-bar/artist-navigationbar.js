@@ -29,20 +29,17 @@ function NavigationBar() {
                         <a className="nav-link" href="contact">Contact</a>
                       </li>
                     </ul>
-                    {user && 
+                    {user &&
                     <ul className="navbar-nav text-right user">
                       <span id="currentuser" className="navbar-text">U bent ingelogd als: {user.unique_name}</span>
                       <li className="nav-item">
-                          <Link to="/logout" className="nav-link">Log uit</Link>
+                            <Link to="/groups" className="nav-link">Groepen</Link>
                       </li>
                       <li className="nav-item">
-                          <Link to="/artist" className="nav-link">Artiesten pannel</Link>
+                          <Link to="/logout" className="nav-link">Log uit</Link>
                       </li>
                     </ul>
-
                     }
-                    
-                    
                     {! user &&
                     <ul className="navbar-nav text-right user">
                         <li className="nav-item">
@@ -52,7 +49,7 @@ function NavigationBar() {
                           <Link to="/login" className="btn btn-md btn-outline-dark">Log in</Link>
                       </li>
                     </ul>
-                    } 
+                    }
                   </div>
                 </div>
             </nav>

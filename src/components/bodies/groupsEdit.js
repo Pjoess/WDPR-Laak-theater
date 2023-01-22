@@ -1,10 +1,10 @@
 import React from 'react';
 import GroupCard from './skeletons/groupsAddSkeleton';
-import useGetGroups from './useGetGroups';
+import useGetGroupsArtist from '../../hooks/groupJoining/useGetGroupsArtist';
 
 
 function CardContainerGroups() {
-    const cardData = useGetGroups();
+    const cardData = useGetGroupsArtist(1);
     
 
 
@@ -12,13 +12,13 @@ function CardContainerGroups() {
     return (
       <>
       <div>
-        <h1>Join Groups</h1>
+        <h1>Edit Groups</h1>
       </div>
 
 
       <div className="container">
         {cardData.map((data) => (
-          <GroupCard key={data.id} name={data.name} description={data.description} type={data.type}  />
+          <GroupCard key={data.name} {...data} />
         ))}
       </div>
       
@@ -27,4 +27,4 @@ function CardContainerGroups() {
     );
   }
   
-  export default CardContainerGroups;
+export default CardContainerGroups;

@@ -1,5 +1,5 @@
 import React from 'react';
-import useCards from '../../hooks/employee/get-bands';
+import useCards from '../../hooks/groupJoining/useGetGroups';
 import Card from './card-skeleton';
 
 function CardContainerBands() {
