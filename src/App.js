@@ -16,6 +16,7 @@ import AdminPage from "./admin-pages/admin-page";
 import RoomManagement from "./admin-pages/room-management";
 import UserManagement from "./admin-pages/user-management";
 import EmployeeManagement from "./admin-pages/employee-management";
+import SeatPickerPage from "./pages/seat-picker/seat-picker-page"
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         {/* Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
+        <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
         {/*--------------------*/}
         <Route path="programma" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
