@@ -24,7 +24,7 @@ export function useLoginSession() {
         "captchaToken": captchaToken,
       })
       .then((response) => { // gebruiker en jwt token zetten
-        // setUser(response.data)
+        setUser(response.data)
         localStorage.setItem("jwt", response.data.token)
         axios.defaults.headers.common[
           "Authorization"

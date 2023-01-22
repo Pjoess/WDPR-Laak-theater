@@ -12,6 +12,8 @@ function AdminNavigationbar() {
                     <Link to="/admin/zalen" className="nav-link">Zalen</Link>
                     <Link to="/admin/gebruikers" className="nav-link">Gebruikers</Link>
                     <Link to="/admin/medewerkers" className="nav-link">Medewerkers</Link>
+                    <Link to="/admin/donateurs" className="nav-link">Donateurs</Link>
+                    <Link to="/admin/donaties" className="nav-link">Donaties</Link>
                 </Nav>
             </Navbar.Collapse>
             <Navbar.Text id="currentuser" className="text-right">
