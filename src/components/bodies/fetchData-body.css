@@ -5,6 +5,15 @@
   justify-content: space-between;
 } 
 
+.datepicker-container {
+  display: inline-block; 
+}
+
+.containerButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+  
 .card {
   padding: 50px;
   margin: 20px;
@@ -27,6 +36,57 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.search{
+.search {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-form {
+  flex: 1;
+}
+
+.search-select {
+  margin-right: 70px;
+}
+
+.datepicker {
   margin-left: 70px;
+  grid-column: 1;
+}
+  
+.search {
+  grid-column: 2;
+}
+  
+.selectedoption {
+  margin-right: 70px;
+  grid-column: 3;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for screens smaller than 600px */
+  .card {
+    font-size: 14px;
+    padding: 20px;
+  }
+  .datepicker {
+    grid-column: 1;
+    padding-bottom: 20px;
+    margin: 0%;
+
+  }
+  .search {
+    grid-column: 1;
+    margin: 0%;
+
+  }
+  .selectedoption {
+    grid-column: 1;
+    margin: 0%;
+  }
 }
