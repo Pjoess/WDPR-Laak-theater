@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom"
 
 function FetchData() {
   const [data, setData] = useState([]);
@@ -95,14 +96,15 @@ function FetchData() {
           (
             <div tabIndex="0" key={index} className="card">
               <div key={index} className="card">
-                <img src={item.imgUrl} alt={item.eventId} width="100" height="100" />
+                <img src="favicon.ico" alt={item.eventId} width="100" height="100" />
               </div>
               <tr >
                 <td>{item.eventId}</td>
-                <td>{item.dateAndTime}</td>
+                <td>{new Date(item.dateAndTime).toLocaleDateString("nl-NL", {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</td>
               </tr>
               {/* de beschrijving moet nog aangepast worden door de echte bestaande data. */}
-              <td>{item.beschrijving}jsbhdfuiefhg</td>
+              <td>{item.beschrijving}</td>
+              <td><Link to={"/seatpicker/" + item.id} className="btn btn-outline-dark">Bestel tickets voor show {item.eventId} <br /> op {new Date(item.dateAndTime).toLocaleDateString("nl-NL", {day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</Link></td>
             </div>
           ))
         ) : (
