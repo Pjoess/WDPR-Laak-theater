@@ -55,7 +55,7 @@ export default function SignUpPage() {
         }
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API}/api/register/user`, {
+            const response = await axios.post("http://synchronicity.ddns.net:7002/api/register/user", {
                 "name": name,
                 "userName": username,
                 "email": email,

@@ -10,7 +10,7 @@ describe("Login formulier incorrect invullen", () => {
         // verzenden intercept
         cy.intercept({
             method: "POST",
-            url: "/api/Login/user",
+            url: "http://synchronicity.ddns.net:7002/api/Login/user",
         }).as("badRequest")
 
         // verzendknop
