@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import useCart from '../../hooks/cart/use-cart'
+import { ShopWindow } from "react-bootstrap-icons"
+import NavigationBar from "../../components/navigation-bar/navigation-bar"
 
 function SeatPickerPage() {
     const [seats, setSeats] = useState([])
     const { showId } = useParams()
+    const [event, setEvent] = useState()
+    const [room, setRoom] = useState() // zaal
     const [isLoading, setLoading] = useState(true)
     const [selectedSeats, setSelectedSeats] = useState([])
+    const { addToCart, removeFromCart } = useCart()
 
     useEffect(() => {
         console.log("show id:" + showId)
@@ -17,6 +23,9 @@ function SeatPickerPage() {
                 if (response.data.room.seats) {
                     setSeats(response.data.room.seats)
                     setLoading(false)
+                    setRoom(response.data.room.id)
+                    setEvent(response.data.event)
+                    console.log(response.data)
                 } else {
                     console.log("No seats data in response")
                 }
@@ -40,100 +49,80 @@ function SeatPickerPage() {
     const seatRows = Object.entries(groupedSeats).map(([row, seats]) => (
         <tr key={row}>
             <td>Rij {row}</td>
-            {seats.map((seat) => (
-                <td>
-                    <button
-                        key={seat.id}
-                        className={`seat ${
-                            selectedSeats.includes(seat.id) ? "selected" : ""
-                        }`}
-                        onClick={() => {
-                            if (selectedSeats.includes(seat.id)) {
-                                setSelectedSeats(
-                                    selectedSeats.filter((id) => id !== seat.id)
-                                )
-                            } else {
-                                setSelectedSeats([...selectedSeats, seat.id])
-                            }
-                        }}
-                    >
-                        {selectedSeats.includes(seat.id) ? (
-                            <span>
-                                U heeft rij {row} plaats {seat.nr} geselecteerd
-                            </span>
-                        ) : (
-                            <span>
-                                Kies rij {row} plaats {seat.nr}
-                            </span>
-                        )}
-                    </button>
-                </td>
-            ))}
+            {seats.map((seat) => {
+                const uniqueSeatId = `${seat.id}-${showId}`;
+                return (
+                    <td>
+                        <button
+                            key={uniqueSeatId}
+                            className={`seat ${
+                                selectedSeats.includes(uniqueSeatId) ? "selected" : ""
+                            }`}
+                            onClick={() => {
+                                if (selectedSeats.includes(uniqueSeatId)) {
+                                    setSelectedSeats(
+                                        selectedSeats.filter((id) => id !== uniqueSeatId)
+                                    );
+                                    removeFromCart({
+                                        id: uniqueSeatId,
+                                        event: event.name,
+                                        room: room,
+                                        seat: seat.nr,
+                                        row: seat.row
+                                    });
+                                } else {
+                                    setSelectedSeats([...selectedSeats, uniqueSeatId])
+                                    addToCart({
+                                        id: uniqueSeatId,
+                                        event: event.name,
+                                        room: room,
+                                        seat: seat.nr,
+                                        row: seat.row
+                                    });
+                                }
+                            }}
+                        >
+                            {selectedSeats.includes(uniqueSeatId) ? (
+                                <span>
+                                    U heeft rij {row} stoel {seat.nr} geselecteerd
+                                </span>
+                            ) : (
+                                <span>
+                                    Kies rij {row} stoel {seat.nr}
+                                </span>
+                            )}
+                        </button>
+                    </td>
+                )
+            })}
             {Array(maxColumns - seats.length)
                 .fill(0)
                 .map((_, i) => (
                     <td aria-hidden>&nbsp;</td>
                 ))}
         </tr>
-    ))
+    ))    
 
     return (
         <div>
             {!isLoading && seats.length > 0 ? (
                 <div>
-                    <p>Gekozen stoel id: {selectedSeats}</p>
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Rijen</th>
-                                <th>Stoelen</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {seatRows}
-                            {/* {Object.entries(groupedSeats).map(([row, seats]) => (
-                            <tr key={row}>
-                                <td>Rij {row}</td>
-                                
-                                    {seats.map((seat) => (
-                                        <td>
-                                        <button
-                                            key={seat.id}
-                                            className={`seat ${
-                                                selectedSeats.includes(seat.id)
-                                                    ? "selected"
-                                                    : ""
-                                            }`}
-                                            onClick={() => {
-                                                if (
-                                                    selectedSeats.includes(
-                                                        seat.id
-                                                    )
-                                                ) {
-                                                    setSelectedSeats(
-                                                        selectedSeats.filter(
-                                                            (id) =>
-                                                                id !== seat.id
-                                                        )
-                                                    )
-                                                } else {
-                                                    setSelectedSeats([
-                                                        ...selectedSeats,
-                                                        seat.id,
-                                                    ])
-                                                }
-                                            }}
-                                        >
-                                            Stoel {seat.nr}
-                                            {selectedSeats.includes(seat.id) && <span> geselecteerd</span>}
-                                        </button>
-                                        </td>
-                                    ))}
-                                
-                            </tr>
-                        ))} */}
-                        </tbody>
-                    </table>
+                    <NavigationBar />
+                    <div className="container">
+                        <h1>Kies een stoel voor {event.name}</h1>
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Rijen</th>
+                                    <th>Stoelen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {seatRows}
+                                <Link to="/cart" className="btn btn-primary mt-3">Naar winkelwagen</Link>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             ) : (
                 <p>Stoelen aan het laden...</p>

@@ -35,7 +35,7 @@ export function useLoginSession() {
       })
       .finally(() => {
         setLoading(false)
-        navigate("/tickets")
+        navigate("/programma")
       })
   }, [])
 
