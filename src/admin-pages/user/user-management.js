@@ -3,10 +3,19 @@ import AdminNavigationbar from "../../components/navigation-bar/admin-navigation
 import MinimalFooter from "../../components/footer/minimal-footer";
 import {Table} from "react-bootstrap";
 import {DeleteButton, EditButton} from "../../components/widgets/button/button";
-import GetUsers from "../../hooks/admin/get-users";
+import {GetUsers} from "../../hooks/admin/get-users";
+import {useHistory} from "react-router-dom";
 
 function UserManagement() {
-    const [userData] = GetUsers();
+    const { userData } = GetUsers();
+    // const history = useHistory();
+    //
+    // const handleEdit = (user) => {
+    //     const { id } = user;
+    //     history.push(`/admin/gebruikers/${id}`);
+    // }
+
+
 
     return(
         <div>

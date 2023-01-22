@@ -16,6 +16,7 @@ import AdminPage from "./admin-pages/admin/admin-page";
 import RoomManagement from "./admin-pages/room/room-management";
 import UserManagement from "./admin-pages/user/user-management";
 import EmployeeManagement from "./admin-pages/employee/employee-management";
+import EditUser from "./hooks/admin/edit-user";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="admin/zalen" element={<RoomManagement/>}/>
         <Route path="admin/gebruikers" element={<UserManagement/>}/>
         <Route path="admin/medewerkers" element={<EmployeeManagement/>}/>
+        <Route path="/admin/gebruikers/:id" component={EditUser} />
       </Routes>
     </div>
   )

@@ -1,4 +1,4 @@
-import NavigationBar from "../../components/navigation-bar/navigation-bar"
+ import NavigationBar from "../../components/navigation-bar/navigation-bar"
 import React, { useState } from "react"
 import FooterComponent from "../../components/footer/footer"
 import axios from "axios"
@@ -94,7 +94,7 @@ export default function SignUpPage() {
                             Voer alstublieft een gebruikersnaam in.
                         </div>
                     )}
-                    <label htmlFor="email">Email:</label>
+                   <label htmlFor="email">Email:</label>
                     <input type="text" id="email" value={email} onChange={(event) => setEmail(event.target.value)} aria-describedby="email-error" className="form-control mb-3" />
                     {!name && (
                         <div id="email-error" className="alert alert-warning">
