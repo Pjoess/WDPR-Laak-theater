@@ -16,6 +16,8 @@ import AdminPage from "./admin-pages/admin/admin-page";
 import RoomManagement from "./admin-pages/room/room-management";
 import UserManagement from "./admin-pages/user/user-management";
 import EmployeeManagement from "./admin-pages/employee/employee-management";
+import DonationList from "./admin-pages/donation/donation-list";
+import DonationUserManagement from "./admin-pages/donation/donation-user-management";
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         {/* Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
-        <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
+        {/*<Route path="seatpicker/:showId" element={<SeatPickerPage />} />*/}
         {/*--------------------*/}
         <Route path="programma" element={<Programming />} />
         <Route path="employee" element={<EmployeeBoard/>}/>
@@ -44,7 +46,9 @@ function App() {
         <Route path="admin/zalen" element={<RoomManagement/>}/>
         <Route path="admin/gebruikers" element={<UserManagement/>}/>
         <Route path="admin/medewerkers" element={<EmployeeManagement/>}/>
-        <Route path="/admin/gebruikers/:id" component={EditUser} />
+        <Route path="admin/donaties" element={<DonationList/>}/>
+        <Route path="admin/donateurs" element={<DonationUserManagement/>}/>
+        {/*<Route path="/admin/gebruikers/:id" component={EditUser} />*/}
       </Routes>
     </div>
   )
