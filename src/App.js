@@ -9,7 +9,7 @@ import Tickets from "./pages/guest-pages/ticket/ticket-page"
 import LoginPage from "./pages/guest-pages/login/login-page"
 import ProgrammingPage from "./pages/guest-pages/programming/programming"
 import EmployeePage from "./pages/employee-pages/employee/employee"
-import ArtistPage from "./pages/employee-pages/artist/artists"
+// import ArtistPage from "./pages/employee-pages/artist/artists"
 import BandsPage from "./pages/employee-pages/band/bands"
 import LogoutPage from "./pages/universal-logged-in-pages/logout/logout-page"
 import AdminPage from "./pages/admin-pages/admin/admin-page";
@@ -17,6 +17,7 @@ import RoomManagementPage from "./pages/admin-pages/room/room-management";
 import UserManagementPage from "./pages/admin-pages/user/user-management";
 import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
 import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
+import ArtistPage from "./pages/universal-logged-in-pages/artist/artist-page"
 
 
 function App() {
@@ -35,16 +36,18 @@ function App() {
         {/* Universal Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
         <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
+        <Route path="artist" element={<ArtistPage/>}/>
         {/*--------------------*/}
         <Route path="programma" element={<ProgrammingPage/>} />
         <Route path="employee" element={<EmployeePage/>}/>
-        <Route path="artists" element={<ArtistPage/>}/>
+        {/* <Route path="artists" element={<ArtistPage/>}/> */}
         <Route path="bands" element={<BandsPage/>}/>
         {/* Admin section */}
         <Route path="admin" element={<AdminPage/>}/>
         <Route path="admin/zalen" element={<RoomManagementPage/>}/>
         <Route path="admin/gebruikers" element={<UserManagementPage/>}/>
         <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
+
       </Routes>
     </div>
   )
