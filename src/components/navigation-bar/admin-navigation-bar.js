@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import {useLoginSession} from "../../hooks/login/use-login-session";
 
 function AdminNavigationbar() {
     return (

@@ -9,7 +9,7 @@
 #contacthead{
     padding: 2rem 10%;
     /* padding: 2rem 7%; */
-    background-image: url("../../../public/images/contactheader.jpg");
+    background-image: url("../../assets/contactheader.jpg");
     height: 900px;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,22 +1,22 @@
 import "./App.css"
 import { Routes, Route } from "react-router-dom"
-import ContactPage from "./pages/contact/contact-page"
-import SignUpPage from "./pages/sign-up/sign-up-page"
+import ContactPage from "./pages/guest-pages/contact/contact-page"
+import SignUpPage from "./pages/guest-pages/sign-up/sign-up-page"
 import CartPage from "./pages/cart/cart-page"
-import IndexPage from "./pages/index/index-page"
-import AboutUs from "./pages/about-us/about-us-page"
-import Tickets from "./pages/ticket/ticket-page"
-import LoginPage from "./pages/login/login-page"
-import Programming from "./pages/programming/programming"
-import EmployeeBoard from "./pages/employee/employee"
-import CardContainerArtists from "./pages/employee/artists"
-import CardContainerBands from "./pages/employee/bands"
-import LogoutPage from "./pages/logout/logout-page"
-import AdminPage from "./admin-pages/admin/admin-page";
-import RoomManagement from "./admin-pages/room/room-management";
-import UserManagement from "./admin-pages/user/user-management";
-import EmployeeManagement from "./admin-pages/employee/employee-management";
-import SeatPickerPage from "./pages/seat-picker/seat-picker-page"
+import IndexPage from "./pages/guest-pages/index/index-page"
+import AboutUsPage from "./pages/guest-pages/about-us/about-us-page"
+import Tickets from "./pages/guest-pages/ticket/ticket-page"
+import LoginPage from "./pages/guest-pages/login/login-page"
+import ProgrammingPage from "./pages/guest-pages/programming/programming"
+import EmployeePage from "./pages/employee-pages/employee/employee"
+import ArtistPage from "./pages/employee-pages/artist/artists"
+import BandsPage from "./pages/employee-pages/band/bands"
+import LogoutPage from "./pages/universal-logged-in-pages/logout/logout-page"
+import AdminPage from "./pages/admin-pages/admin/admin-page";
+import RoomManagementPage from "./pages/admin-pages/room/room-management";
+import UserManagementPage from "./pages/admin-pages/user/user-management";
+import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
+import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
 
 
 function App() {
@@ -27,24 +27,24 @@ function App() {
         <Route path="/" element={<IndexPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="aboutus" element={<AboutUs />} />
+        <Route path="aboutus" element={<AboutUsPage/>} />
         <Route path="tickets" element={<Tickets />} />
         {/* Guest only section*/}
-        <Route path="signup" element={<SignUpPage />} />
+        <Route path="registreer" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />
-        {/* Logged-in user only*/}
+        {/* Universal Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
         <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
         {/*--------------------*/}
-        <Route path="programma" element={<Programming />} />
-        <Route path="employee" element={<EmployeeBoard/>}/>
-        <Route path="artists" element={<CardContainerArtists/>}/>
-        <Route path="bands" element={<CardContainerBands/>}/>
+        <Route path="programma" element={<ProgrammingPage/>} />
+        <Route path="employee" element={<EmployeePage/>}/>
+        <Route path="artists" element={<ArtistPage/>}/>
+        <Route path="bands" element={<BandsPage/>}/>
         {/* Admin section */}
         <Route path="admin" element={<AdminPage/>}/>
-        <Route path="admin/zalen" element={<RoomManagement/>}/>
-        <Route path="admin/gebruikers" element={<UserManagement/>}/>
-        <Route path="admin/medewerkers" element={<EmployeeManagement/>}/>
+        <Route path="admin/zalen" element={<RoomManagementPage/>}/>
+        <Route path="admin/gebruikers" element={<UserManagementPage/>}/>
+        <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
       </Routes>
     </div>
   )

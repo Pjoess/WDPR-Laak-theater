@@ -3,10 +3,9 @@ import useCart from '../../hooks/cart/use-cart'
 
 export default function CartPage() {
     const { items, addToCart, removeFromCart } = useCart()
-
     return (
         <div>
-            <table class="table">
+            <table className="table">
             <thead>
                 <tr>
                     <th scope="col">Evenement</th>

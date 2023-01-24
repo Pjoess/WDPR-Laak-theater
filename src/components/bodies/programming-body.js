@@ -1,14 +1,9 @@
-import NavigationBar from "../navigation-bar/navigation-bar";
 import React from "react";
-import FooterComponent from "../footer/footer";
 import './programming.css'
-import useData from "../../hooks/progamming/use-programming";
-import { useState } from "react";
+import UseProgramming from "../../hooks/progamming/use-programming";
 
 function ProgrammingBody() {
-
-    const { data, state, handleSubmit, handleChange } = useData();
-
+    const { data, state, handleSubmit, handleChange } = UseProgramming();
 
     return(
         <>
@@ -19,7 +14,6 @@ function ProgrammingBody() {
                         <h1>Agenda</h1>
                     </div>
                 </div>
-
                 <div className="container table">
                     <table className="table table-dark table-striped table-hover table-bordered align-middle">
                         <thead>
@@ -42,7 +36,6 @@ function ProgrammingBody() {
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </>
     );

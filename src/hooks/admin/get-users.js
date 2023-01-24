@@ -7,16 +7,17 @@ export default function GetUsers() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("http://localhost:7002/api/admin/employees");
+                const response = await axios.get(`${process.env.REACT_APP_API}api/admin/employees`);
                 setUserData(response.data);
             } catch (error) {
                 console.error(error);
             }
         }
+
         fetchData();
     }, []);
 
-    return { userData };
+    return {userData};
 }
 
 

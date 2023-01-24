@@ -1,5 +1,6 @@
 import React from "react";
 import './footer.css';
+import {Link} from "react-router-dom";
 
 export default function FooterComponent(){
     return(
@@ -11,31 +12,29 @@ export default function FooterComponent(){
                   <div className="row text-center d-flex justify-content-center pt-5">
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="over ons link">Over ons</a>
+                        <Link to="/over-ons" className="footer-link" alt="over ons link">Over ons</Link>
+                      </h6>
+                    </div>
+                    <div className="col-md-2">
+                      <h6 className="text-uppercase font-weight-bold">
+                        <Link to="/programma" className="footer-link" alt="programma link">Programma</Link>
+                      </h6>
+                    </div>
+                    <div className="col-md-2">
+                      <h6 className="text-uppercase font-weight-bold">
+                        <Link to="/contact" className="footer-link" alt="contact link">Contact</Link>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="tickets link">Tickets</a>
+                        <Link to="/registreer" className="footer-link" alt="registreer link">Registreer</Link>
                       </h6>
                     </div>
 
                     <div className="col-md-2">
                       <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="contact link">Contact</a>
-                      </h6>
-                    </div>
-
-                    <div className="col-md-2">
-                      <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="registreer link">Registreer</a>
-                      </h6>
-                    </div>
-
-                    <div className="col-md-2">
-                      <h6 className="text-uppercase font-weight-bold">
-                        <a href="#!" className="footer-link" alt="login link">Login</a>
+                        <Link to="/login" className="footer-link" alt="login link">Login</Link>
                       </h6>
                     </div>
                   </div>
@@ -57,9 +56,9 @@ export default function FooterComponent(){
                 </section>
 
                 <section className="text-center mb-4">
-                  <a href="" className=" me-4" alt="home link logo theater laak">
-                    <img src="images/logo.png" alt="Logo Theater Laak"/>
-                  </a>
+                  <Link to="/" className=" me-4" alt="home link logo theater laak">
+                    <img src="../assets/logo.png" alt="Logo Theater Laak"/>
+                  </Link>
                 </section>
               </div>
 

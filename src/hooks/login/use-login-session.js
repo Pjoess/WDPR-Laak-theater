@@ -3,7 +3,7 @@ import axios from "axios"
 import jwtDecode from 'jwt-decode'
 import { useNavigate } from "react-router-dom"
 
-export function useLoginSession() {
+export function UseLoginSession() {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -18,7 +18,7 @@ export function useLoginSession() {
   const login = useCallback((username, password, captchaToken) => {
     setLoading(true)
     axios
-      .post(`${process.env.REACT_APP_API}/api/Login/user`, {
+      .post(`${process.env.REACT_APP_API}/api/login/user`, {
         "username": username,
         "password": password,
         "captchaToken": captchaToken,

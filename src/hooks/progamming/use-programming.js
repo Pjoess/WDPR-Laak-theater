@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react'
 
-export default function useData() {
+export default function UseProgramming() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('api/Programming')
+        fetch(`${process.env.REACT_APP_API}/api/programming`)
             .then(response => response.json())
             .then(data => {
                 setData(data);
             });
     }, []);
-
-    
-
-    return { data, setData};
+    return {data, setData};
 }
 

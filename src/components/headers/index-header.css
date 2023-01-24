@@ -6,7 +6,7 @@
 #texthead{
     padding: 2rem 10%;
     /* padding: 2rem 7%; */
-    background-image: url("../../../public/images/header.png");
+    background-image: url("../../assets/header.png");
     height: 900px;
     background-repeat: no-repeat;
     background-size: cover;
