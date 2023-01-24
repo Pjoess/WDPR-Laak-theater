@@ -1,6 +1,6 @@
 import React from "react";
 import "./index-header.css";
-import { Ticket, TicketPerforated } from 'react-bootstrap-icons';
+import { TicketPerforated } from 'react-bootstrap-icons';
 import { EnvelopeHeart } from "react-bootstrap-icons";
 
 export default function IndexHeader(){

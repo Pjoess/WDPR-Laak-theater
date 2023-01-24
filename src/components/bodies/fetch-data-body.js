@@ -75,7 +75,7 @@ function FetchData() {
     <div>
       <div className='containerButtons'>
         <div className='datepicker'>
-          <DatePicker placeholderText='Filter op datum' selected={selectedDate} onChange={date => setSelectedDate(date)}/>
+          <DatePicker placeholderText='Filter op datum' selected={selectedDate} onChange={(date) => { handleDateChange(date); setSelectedDate(date); }} />
         </div>
         <form>
           <input className='search' type="text" placeholder="Search" value={searchValue} onChange={handleSearch} />
