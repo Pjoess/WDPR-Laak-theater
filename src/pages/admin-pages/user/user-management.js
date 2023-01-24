@@ -3,10 +3,10 @@ import AdminNavigationbar from "../../../components/navigation-bar/admin-navigat
 import MinimalFooter from "../../../components/footer/minimal-footer";
 import {Table} from "react-bootstrap";
 import {DeleteButton, EditButton} from "../../../components/widgets/button/button";
-import GetUsers from "../../../hooks/admin/get-users";
+import {GetUsers} from "../../../hooks/admin/get-users";
 
 function UserManagement() {
-    const [userData] = GetUsers();
+    const {userData} = GetUsers();
 
     return(
         <div>

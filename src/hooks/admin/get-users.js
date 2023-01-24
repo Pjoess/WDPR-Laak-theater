@@ -1,23 +1,40 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function GetUsers() {
-    const [userData, setUserData] = useState([]);
+export function GetEmployees() {
+    const [employeeData, setEmployeeData] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
+        const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API}api/admin/employees`);
-                setUserData(response.data);
+                const response = await axios.get(`${process.env.REACT_APP_API}/api/admin/employees`);
+                setEmployeeData(response.data);
             } catch (error) {
                 console.error(error);
             }
         }
-
         fetchData();
     }, []);
 
-    return {userData};
+    return {userData: employeeData};
+}
+
+export function GetUsers(){
+    const [userData, setUserData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_API}/api/admin/users`);
+                setUserData(response.data);
+            } catch (error){
+                console.error(error);
+            }
+        }
+        fetchData();
+    }, [])
+
+    return { userData: userData }
 }
 
 
