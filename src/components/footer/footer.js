@@ -57,7 +57,7 @@ export default function FooterComponent(){
 
                 <section className="text-center mb-4">
                   <Link to="/" className=" me-4" alt="home link logo theater laak">
-                    <img src="../assets/logo.png" alt="Logo Theater Laak"/>
+                    <img src="/images/logo.png" alt="Logo Theater Laak"/>
                   </Link>
                 </section>
               </div>
