@@ -9,7 +9,7 @@ function NavigationBar() {
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <Link to="/" className="navbar-brand logo">
-                        <img src="/images/logo.png" width="40" height="50" alt="Logo"/>
+                        <img src="../../../public/images/logo.png" width="40" height="50" alt="Logo"/>
                     </Link>
                   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

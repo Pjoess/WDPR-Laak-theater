@@ -9,7 +9,6 @@ function ProgrammingBody() {
     return(
         <>
             <div className="Agenda-info">
-
                 <div className="container-fluid agenda">
                     <div className="row">
                         <h1>Agenda</h1>
@@ -31,7 +30,7 @@ function ProgrammingBody() {
                                     <td>{event.Name}</td>
                                     <td>{event.Date}</td>
                                     <td>{event.Time}</td>
-                                    <td>{event.Artists.join(', ')}</td>
+                                    {/* <td>{event.Artists.join(', ')}</td> */}
                                 </tr>
                             ))}
                         </tbody>

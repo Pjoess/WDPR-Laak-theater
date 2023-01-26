@@ -17,6 +17,8 @@ import RoomManagementPage from "./pages/admin-pages/room/room-management";
 import UserManagementPage from "./pages/admin-pages/user/user-management";
 import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
 import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
+import DonatiePage from "../src/pages/donor/donatie/donatie-page"
+
 
 
 function App() {
@@ -27,8 +29,10 @@ function App() {
         <Route path="/" element={<IndexPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="aboutus" element={<AboutUsPage/>} />
+        <Route path="over-ons" element={<AboutUsPage/>} />
         <Route path="tickets" element={<Tickets />} />
+        {/* /* Donor section */}
+        <Route path="donatie" element={<DonatiePage />} />
         {/* Guest only section*/}
         <Route path="registreer" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />

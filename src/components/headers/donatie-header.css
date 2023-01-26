@@ -2,9 +2,9 @@
 .Header{
     height: auto;
 }
-#texthead{
+#textheaddonatie{
     padding: 2rem 10%;
-    background-image: url('../../../public/images/header.png');
+    background-image: url("../../../public/images/donatie.png");
     height: 900px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,3 +32,4 @@
     vertical-align:top;
     margin-right: 0px;
 }
+

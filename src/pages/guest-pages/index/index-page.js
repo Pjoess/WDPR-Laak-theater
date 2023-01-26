@@ -12,7 +12,6 @@ export default function IndexPage(){
                 <NavigationBar/>
                 <IndexHeader/>
             </section>
-
             <IndexBody/>
             <FooterComponent/>
         </div>
