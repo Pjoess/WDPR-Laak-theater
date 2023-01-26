@@ -30,7 +30,7 @@ function ProgrammingBody() {
                                     <td>{event.Name}</td>
                                     <td>{event.Date}</td>
                                     <td>{event.Time}</td>
-                                    <td>{event.Artists.join(', ')}</td>
+                                    {/* <td>{event.Artists.join(', ')}</td> */}
                                 </tr>
                             ))}
                         </tbody>

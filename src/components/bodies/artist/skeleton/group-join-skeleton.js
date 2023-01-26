@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAddToGroup from "../../../../hooks/artist/use-add-to-groups";
 import { UseLoginSession } from "../../../../hooks/login/use-login-session";
+import '../artist.css'
 
 function GroupJoinSkeleton({ id, name, description, type}) {
     const user = UseLoginSession();
@@ -10,17 +11,19 @@ function GroupJoinSkeleton({ id, name, description, type}) {
 
     const handleClick = async () => {
         setIsLoading(true);
-        setArtistId(user.Id);
+        // setArtistId(user.Id);
         await addGroup(artistId, id);
         setArtistId('');
         alert("You have joined the group");
         setIsLoading(false);
     }
     return (
-        <div className="card">
+
+        <div className="card  group-join-card">
             {/* <img ></img> */}
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
+                <p>{id}</p>
                 <p className="card-text">{description}</p>
                 <p className="card-text">{type}</p>
                 <div className="container">

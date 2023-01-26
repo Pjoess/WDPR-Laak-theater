@@ -1,0 +1,14 @@
+.artist-header{
+    width: 100%;
+    height: 200px;
+    background-color: antiquewhite;
+}
+
+.group-join-card{
+    background-color: red;
+
+}
+
+.artist-join-body{
+    background-color: azure;
+}

@@ -37,3 +37,9 @@
 .logo{
     padding: 0;
 }
+
+.cart{
+    color: black;
+    height:20px;
+    width: auto;
+}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import './navigation-bar.css';
 import { UseLoginSession } from "../../hooks/login/use-login-session"
+import { Cart } from "react-bootstrap-icons";
 
 function NavigationBar() {
     const { user } = UseLoginSession()
@@ -47,6 +48,9 @@ function NavigationBar() {
                       </li>
                     </ul>
                     }
+                    <ul className="navbar-nav text-right cart">
+                        <Link to="/cart"><Cart size="10x"/></Link>
+                    </ul>
                   </div>
                 </div>
             </nav>
