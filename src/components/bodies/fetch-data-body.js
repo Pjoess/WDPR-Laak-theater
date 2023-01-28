@@ -2,6 +2,7 @@ import './fetch-data-body.css'
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import DatePicker from "react-datepicker";
+import { UseDateFormatting } from '../../hooks/date/use-date-formatting';
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ function FetchData() {
   const [data, setData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
+  const { toDutchDate } = UseDateFormatting()
   const [filteredData, setFilteredData] = useState(data);
   const [selectedOption, setSelectedOption] = useState('');
   const options = [
@@ -97,12 +99,13 @@ function FetchData() {
               <div key={index}>
                 <img src={item.image} alt={item.eventId} width="255px" height="200" />
               </div>
-              <tr >
-                <td>{item.dateAndTime}</td>
-              </tr>
-              <td>{item.description}</td>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">{item.event.name}</li>
+                <li className="list-group-item">{toDutchDate(item.dateAndTime)}</li>
+              </ul>
+              <div className="card-body">{item.description}</div>
               <Link to={`/programminginfo?showid=${item.id}`}>
-                <button className="download-button1 shadow" type="button" alt="button naar om te doneren aan een goed doel">
+                <button className="download-button1 shadow" type="button">
                   Ga naar show
                 </button>
               </Link>
