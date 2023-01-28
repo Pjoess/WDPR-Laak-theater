@@ -21,6 +21,7 @@ import DonatiePage from "../src/pages/donor/donatie-page"
 import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
 import DonerenPage from "../src/pages/donor/doneren-page"
 import BetalingPage from "./pages/donor/betaling-page"
+import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="over-ons" element={<AboutUsPage/>} />
         <Route path="tickets" element={<Tickets />} />
+        <Route path="programminginfo" element={<ProgrammingInfo />} />
         {/* /* Donor section */}
         <Route path="donatie" element={<DonatiePage />} />
         <Route path="donatie-goeddoel" element={<DonatieGoeddoelPage />} />

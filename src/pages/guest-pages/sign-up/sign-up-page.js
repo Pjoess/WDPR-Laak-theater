@@ -69,7 +69,8 @@ export default function SignUpPage() {
             } else if (response.status === 400) {
                 setError("Deze gebruikersnaam is al in gebruik. Kies een ander gebruikersnaam.")
             }
-        } catch (error) {
+        } 
+        catch (error) {
             setError("Er is een fout opgetreden bij het registreren.")
         }
     }

@@ -6,7 +6,7 @@ function ProgrammingBody() {
     // const { data, state, handleSubmit, handleChange } = UseProgramming(); de state, handlesubmit en handle change wordt niet gebruikt..
     const { data } = UseProgramming();
 
-    return(
+    return (
         <>
             <div className="Agenda-info">
                 <div className="container-fluid agenda">

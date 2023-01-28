@@ -3,6 +3,9 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from 'react-router-dom'
+
+
 
 function FetchData() {
   const [data, setData] = useState([]);
@@ -13,12 +16,13 @@ function FetchData() {
   const options = [
     { label: 'Dit is een voorbeeld', value: 'toneel' },
     { label: 'Voorbeeld 2', value: 'show' },
-    { label: 'oorbeeld 3', value: 'nog iets' },
+    { label: 'Voorbeeld 3', value: 'nog iets' },
   ];
 
 
   useEffect(() => {
     async function FetchShows() {
+
       axios
         .get(`${process.env.REACT_APP_API}/api/show`)
         .then(response => {
@@ -45,7 +49,6 @@ function FetchData() {
     }
     FetchShows();
   }, []);
-
 
 
   const handleSearch = event => {
@@ -90,16 +93,19 @@ function FetchData() {
         {Array.isArray(filteredData) && filteredData.length > 0 ? (
           filteredData.map((item, index) =>
           (
-            <div tabIndex="0" key={index} className="card">
-              <div key={index} className="card">
-                <img src={item.imgUrl} alt={item.eventId} width="100" height="100" />
+            <div tabIndex="0" key={index} className="card" >
+              <div key={index}>
+                <img src={item.image} alt={item.eventId} width="255px" height="200" />
               </div>
               <tr >
-                <td>{item.eventId}</td>
                 <td>{item.dateAndTime}</td>
               </tr>
-              {/* de beschrijving moet nog aangepast worden door de echte bestaande data. */}
-              <td>{item.beschrijving}Placeholder beschrijving</td>
+              <td>{item.description}</td>
+              <Link to={`/programminginfo?showid=${item.id}`}>
+                <button className="download-button1 shadow" type="button" alt="button naar om te doneren aan een goed doel">
+                  Ga naar show
+                </button>
+              </Link>
             </div>
           ))
         ) : (
