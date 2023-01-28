@@ -1,0 +1,25 @@
+.containerButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.download-button1 {
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border-color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.download-button1:hover {
+    border-color: pink;
+    background-color: pink;
+    color: white;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+

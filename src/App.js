@@ -17,7 +17,12 @@ import RoomManagementPage from "./pages/admin-pages/room/room-management";
 import UserManagementPage from "./pages/admin-pages/user/user-management";
 import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
 import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
-import DonatiePage from "../src/pages/donor/donatie/donatie-page"
+import DonatiePage from "../src/pages/donor/donatie-page"
+import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
+import DonerenPage from "../src/pages/donor/doneren-page"
+import BetalingPage from "./pages/donor/betaling-page"
+
+
 
 
 
@@ -33,6 +38,9 @@ function App() {
         <Route path="tickets" element={<Tickets />} />
         {/* /* Donor section */}
         <Route path="donatie" element={<DonatiePage />} />
+        <Route path="donatie-goeddoel" element={<DonatieGoeddoelPage />} />
+        <Route path="doneren" element={<DonerenPage />} />
+        <Route path="betaling" element={<BetalingPage />} />
         {/* Guest only section*/}
         <Route path="registreer" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />
@@ -49,6 +57,7 @@ function App() {
         <Route path="admin/zalen" element={<RoomManagementPage/>}/>
         <Route path="admin/gebruikers" element={<UserManagementPage/>}/>
         <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
+        {/* <Route path="*" element={}/> voor een not found page */}
       </Routes>
     </div>
   )

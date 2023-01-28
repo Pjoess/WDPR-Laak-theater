@@ -1,7 +1,6 @@
 import React from "react";
 import './index-header.css'
-import { TicketPerforated } from 'react-bootstrap-icons';
-import { EnvelopeHeart } from "react-bootstrap-icons";
+import { CashCoin, TicketPerforated } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom'
 
 
@@ -26,7 +25,7 @@ export default function IndexHeader() {
 
                         <Link to="../donatie">
                             <button className="btn btn-outline-light btn-lg download-button shadow" type="button" alt="doneer link"  >
-                                <EnvelopeHeart /> Doneer
+                                <CashCoin /> Doneer
                             </button>
                         </Link>
 

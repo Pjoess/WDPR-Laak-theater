@@ -10,10 +10,10 @@ export default function DonatieHeader() {
                         <h1>Wil jij een bijdrage leveren aan het theater?</h1>
                     </div>
                     <div className="col-12 header-item" id="index-header-text">
-                        <p className="shadow">Voel je thuis bij Laak Theater!
-                            <br />Beleef de beste momenten met onze voorstellingen.
+                        <h3 className="shadow">Door te doneren help je ons en een ander!
+                            <br />“Giving is not just about making a donation. It is about making a difference.” 
                             <br />
-                        </p>
+                        </h3>
                     </div>
                     <div className="col-12 header-item">
                     </div>

@@ -9,7 +9,7 @@ export default function IndexBody(){
             {/* <!-- 2 SMALL BLOCK ROW --> */}
             <div className="row">
                 <div className="col-md-6 col">
-                <div className="card card-1">
+                <div className="card-1">
                     <img src="/" className="card-img-top" alt="/"/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
@@ -19,7 +19,7 @@ export default function IndexBody(){
                 </div>
                 </div>
                 <div className="col-md-6 col">
-                <div className="card card-2">
+                <div className="card-2">
                     <img src="/" className="card-img-top" alt="/"/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
@@ -33,7 +33,7 @@ export default function IndexBody(){
             {/* <!-- 2 LONG BLOCK ROW --> */}
             <div className="row">
                 <div className="col-md-12 col">
-                <div className="card card-3">
+                <div className="card-3">
                     <img src="/" className="card-img-top" alt="/"/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
@@ -43,7 +43,7 @@ export default function IndexBody(){
                 </div>
                 </div>
                 <div className="col-md-12 col">
-                <div className="card card-4">
+                <div className="card-4">
                     <img src="/" className="card-img-top" alt="..."/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
@@ -57,7 +57,7 @@ export default function IndexBody(){
             {/* <!-- 2 SMALL BLOCK ROW --> */}
             <div className="row">
                 <div className="col-md-6 col">
-                <div className="card card-5">
+                <div className="card-5">
                     <img src="..." className="card-img-top" alt="..."/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
@@ -67,7 +67,7 @@ export default function IndexBody(){
                 </div>
                 </div>
                 <div className="col-md-6 col">
-                <div className="card card-6">
+                <div className="card-6">
                     <img src="..." className="card-img-top" alt="..."/>
                     <div className="card-body">
                     <h5 className="card-title">Special title treatment</h5>
