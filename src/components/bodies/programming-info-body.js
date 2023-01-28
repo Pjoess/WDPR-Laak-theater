@@ -3,11 +3,13 @@ import './programming.css'
 import './programming-info-body.css'
 import { Link, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
+import { UseDateFormatting } from '../../hooks/date/use-date-formatting';
 
 
 export default function ProgrammingInfoBody({ showId }) {
     const [data, setData] = useState('');
     const location = useLocation();
+    const { toDutchDate } = UseDateFormatting()
 
 
 
@@ -58,7 +60,7 @@ export default function ProgrammingInfoBody({ showId }) {
                                     <td>{data.event.name}</td>
                                 </tr>
                                 <tr >
-                                    <td>{data.dateAndTime}</td>
+                                    <td>{toDutchDate(data.dateAndTime)}</td>
                                 </tr>
                                 <tr>
                                     <td>{data.description}</td>
