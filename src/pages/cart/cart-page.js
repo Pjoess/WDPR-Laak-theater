@@ -3,14 +3,15 @@ import NavigationBar from '../../components/navigation-bar/navigation-bar'
 import useCart from '../../hooks/cart/use-cart'
 import axios from "axios";
 import { UseLoginSession } from '../../hooks/login/use-login-session'
+import { useNavigate } from 'react-router-dom'
 
 export default function CartPage(props) {
     const [error, setError] = useState("")
-    const [success, setSuccess] = useState("")
     const { items, removeFromCart } = useCart()
     console.log(JSON.stringify(items))
 
     const { user } = UseLoginSession()
+    const navigate = useNavigate()
 
     const handleOrder = () => {
         if (items.length === 0) {
@@ -36,7 +37,7 @@ export default function CartPage(props) {
             .then((res) => {
                 console.log(res)
                 setError("")
-                setSuccess("Uw bestelling is gelukt!")
+                navigate("/bestelling-gelukt")
             }).catch((e) => {
                 setError("Er is een fout opgetreden tijdens het bestellen.")
             })
@@ -73,11 +74,6 @@ export default function CartPage(props) {
                 {error && (
                     <div className="alert alert-danger mt-3" role="alert">
                     {error}
-                    </div>
-                )}
-                {success && (
-                    <div className="alert alert-success mt-3" role="alert">
-                    {success}
                     </div>
                 )}
             </div>
