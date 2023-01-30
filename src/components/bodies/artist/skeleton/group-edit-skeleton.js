@@ -8,7 +8,7 @@ function GroupEditSkeleton({ id, name, description, type }) {
     const [isLoading, setIsLoading] = useState(false);
     const [groupName, setGroupName] = useState('');
     const [groupDescription, setGroupDescription] = useState('');
-    const [artistId, setArtistId] = useState('');
+    const [artistId, setArtistId] = useState(1);
     const [artistName, setArtistName] = useState('');
     const data = useGetArtistsFromGroup(id);
     const [editMode, setEditMode] = useState(false);
@@ -50,6 +50,8 @@ function GroupEditSkeleton({ id, name, description, type }) {
         
         const response = window.confirm("Are you sure you want to do that?");
         
+        
+
         if(response){
             setIsLoading(true);
 
@@ -57,8 +59,6 @@ function GroupEditSkeleton({ id, name, description, type }) {
             console.log(artistId);
             await deleteFromGroup(artistId, id);
             alert('Artiest verwijderd.');
-
-            setArtistId('');
             setIsLoading(false);
         }
         else{
@@ -112,6 +112,27 @@ function GroupEditSkeleton({ id, name, description, type }) {
                 </>
             )}
             <hr/>
+            {editMode ? (
+
+                <div>
+                <h6>Artists in Group:</h6>
+
+                {isLoading ?(
+                        <p>Loading...</p>
+                    ):(
+                    <ul>
+                        {data.map((artist) => (
+
+                            <li key={artist.id}>{artist.name}<button onClick={() => handleDeleteClick(artist.id)}>Delete</button></li>
+                    
+                        
+                    
+                        ))}
+                    </ul>
+                    )}
+                </div>
+               
+            ):(
             <div>
                 <h6>Artists in Group:</h6>
                 
@@ -123,9 +144,9 @@ function GroupEditSkeleton({ id, name, description, type }) {
 
                             <li key={artist.id}>
                                 {artist.name}
-                                {editMode ? (
+                                {/* {editMode ? (
                                     <button onClick={handleDeleteClick(artist.id)}>Delete</button>
-                                ) : null}
+                                ) : null} */}
                             </li>
                     
                         
@@ -134,6 +155,7 @@ function GroupEditSkeleton({ id, name, description, type }) {
                     </ul>
                 )}
             </div>
+            )}
             {editMode ? (
                 <div>
                     {/* <button onClick={save}>Save</button><br/> */}

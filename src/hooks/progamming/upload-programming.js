@@ -10,6 +10,7 @@ export default function UploadProgramming(file) {
     // Check if the file is a CSV or Excel file
     if (file.type !== "text/csv" && file.type !== "application/vnd.ms-excel") {
         console.error("Invalid file type. Only CSV and Excel files are allowed.");
+        alert("Het bestand dat u heeft ingevoerd is geen: csv of Excel bestand")
         return;
     }
     // Use the FileReader API to read the contents of the file

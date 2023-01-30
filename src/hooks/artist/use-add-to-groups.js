@@ -4,10 +4,12 @@ import axios from 'axios';
 export default function useAddToGroup () {
     const [isLoading, setIsLoading] = useState(false);
 
-    async function addGroup(artistid, groupid) {
+    async function addGroup(artistId, groupId) {
         setIsLoading(true);
         try {
-            const response = await axios.put('http://localhost:7002/api/artist/group/add', {artistid, groupid});
+            console.log(artistId);
+            console.log(groupId);
+            const response = await axios.put('http://localhost:7002/api/artist/group/add', {artistId, groupId});
             console.log(response);
         } catch (error) {
             console.log(error);
