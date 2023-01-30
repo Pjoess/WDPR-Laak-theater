@@ -67,15 +67,19 @@ function SeatPickerPage() {
                                     removeFromCart({
                                         id: uniqueSeatId,
                                         event: event.name,
+                                        showId: event.id,
+                                        price: 9.99,
                                         room: room,
                                         seat: seat.nr,
-                                        row: seat.row
+                                        row: seat.row,
                                     });
                                 } else {
                                     setSelectedSeats([...selectedSeats, uniqueSeatId])
                                     addToCart({
                                         id: uniqueSeatId,
                                         event: event.name,
+                                        showId: event.id,
+                                        price: 9.99,
                                         room: room,
                                         seat: seat.nr,
                                         row: seat.row
