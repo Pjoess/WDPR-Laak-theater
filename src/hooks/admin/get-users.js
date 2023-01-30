@@ -20,12 +20,18 @@ export function GetEmployees() {
 }
 
 export function GetUsers(){
+    axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem("jwt")}`;
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API}/api/admin/users`);
+                const token = localStorage.getItem("jwt");
+                const response = await axios.get(`${process.env.REACT_APP_API}/api/admin/users`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
                 setUserData(response.data);
             } catch (error){
                 console.error(error);
@@ -33,6 +39,7 @@ export function GetUsers(){
         }
         fetchData();
     }, [])
+
 
     return { userData: userData }
 }

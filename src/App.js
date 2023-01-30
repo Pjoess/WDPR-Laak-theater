@@ -22,12 +22,20 @@ import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
 import DonerenPage from "../src/pages/donor/doneren-page"
 import BetalingPage from "./pages/donor/betaling-page"
 import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
+import {useState} from "react";
 
 
 
 
 
 function App() {
+
+  const [userRoles, setUserRoles] = useState([])
+
+  const updateUserRoles = (roles) => {
+    setUserRoles(roles)
+  }
+
   return (
     <div className="App">
       <Routes>
@@ -55,10 +63,10 @@ function App() {
         <Route path="artists" element={<ArtistPage/>}/>
         <Route path="bands" element={<BandsPage/>}/>
         {/* Admin section */}
-        <Route path="admin" element={<AdminPage/>}/>
-        <Route path="admin/zalen" element={<RoomManagementPage/>}/>
-        <Route path="admin/gebruikers" element={<UserManagementPage/>}/>
-        <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
+        <Route path="admin" element={userRoles.includes("admin") ? <AdminPage/> : null}/>
+        <Route path="admin/zalen" element={ userRoles.includes("admin") ?<RoomManagementPage/> : null}/>
+        <Route path="admin/gebruikers" element={ userRoles.includes("admin") ?<UserManagementPage/> : null}/>
+        <Route path="admin/medewerkers" element={userRoles.includes("admin") ? <EmployeeManagementPage/> : null}/>
         {/* <Route path="*" element={}/> voor een not found page */}
       </Routes>
     </div>
