@@ -1,12 +1,12 @@
 import React from "react";
 import './programming.css'
-import UseProgramming from "../../hooks/progamming/use-programming";
+// import UseProgramming from "../../hooks/progamming/use-programming";
 
-function ProgrammingBody() {
+export default function ProgrammingBody() {
     // const { data, state, handleSubmit, handleChange } = UseProgramming(); de state, handlesubmit en handle change wordt niet gebruikt..
-    const { data } = UseProgramming();
+    // const { data } = UseProgramming();
 
-    return (
+    return(
         <>
             <div className="Agenda-info">
                 <div className="container-fluid agenda">
@@ -14,7 +14,7 @@ function ProgrammingBody() {
                         <h1>Agenda</h1>
                     </div>
                 </div>
-                <div className="container table">
+                {/* <div className="container table">
                     <table className="table table-dark table-striped table-hover table-bordered align-middle">
                         <thead>
                             <tr>
@@ -30,15 +30,15 @@ function ProgrammingBody() {
                                     <td>{event.Name}</td>
                                     <td>{event.Date}</td>
                                     <td>{event.Time}</td>
-                                    {/* <td>{event.Artists.join(', ')}</td> */}
+                                    <td>{event.Artists.join(', ')}</td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
         </>
     );
 }
 
-export default ProgrammingBody;
+
