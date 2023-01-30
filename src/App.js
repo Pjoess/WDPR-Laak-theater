@@ -23,6 +23,7 @@ import DonerenPage from "../src/pages/donor/doneren-page"
 import BetalingPage from "./pages/donor/betaling-page"
 import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
 import {useState} from "react";
+import OrderPlaced from "./pages/order-placed/order-placed"
 
 
 
@@ -57,6 +58,7 @@ function App() {
         {/* Universal Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
         <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
+        <Route path="bestelling-gelukt" element={<OrderPlaced />} />
         {/*--------------------*/}
         <Route path="programma" element={<ProgrammingPage/>} />
         <Route path="employee" element={<EmployeePage/>}/>
