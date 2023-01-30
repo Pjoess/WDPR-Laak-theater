@@ -29,7 +29,7 @@ export default function IndexHeader() {
                                 <CashCoin /> Doneer
                             </button>
                         </Link>
-                        <Link to="../tickets">
+                        <Link to="/programma">
                         <button className="btn btn-outline-light btn-lg download-button shadow" type="button" alt="tickets bestellen link">
                             <TicketPerforated /> Bestel Tickets
                         </button>
