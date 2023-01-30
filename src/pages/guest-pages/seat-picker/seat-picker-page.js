@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Link, useParams } from "react-router-dom"
 import useCart from "../../../hooks/cart/use-cart"
-import { ShopWindow } from "react-bootstrap-icons"
 import NavigationBar from "../../../components/navigation-bar/navigation-bar"
 import FooterComponent from "../../../components/footer/footer"
 

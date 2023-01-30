@@ -7,13 +7,13 @@ import { UseLoginSession } from '../../hooks/login/use-login-session'
 export default function CartPage(props) {
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
-    const { items, addToCart, removeFromCart } = useCart()
+    const { items, removeFromCart } = useCart()
     console.log(JSON.stringify(items))
 
     const { user } = UseLoginSession()
 
     const handleOrder = () => {
-        if (items.length == 0) {
+        if (items.length === 0) {
             setError("Winkelwagen is leeg!")
             return
         }

@@ -8,8 +8,7 @@ function LoginPage() {
   const [password, setPassword] = useState("")
   const [captchaToken, setCaptchaToken] = useState('')
   const [error, setError] = useState("")
-  const { login, loading, user } = UseLoginSession() 
-// de loading en de user wordt niet gebruikt.
+  const { login } = UseLoginSession()
 
   const passwordRegex = new RegExp(
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=])(?=.*[0-9])(?=.{8,})"
