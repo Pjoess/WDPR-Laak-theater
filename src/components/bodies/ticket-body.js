@@ -7,7 +7,7 @@ import { UseDateFormatting } from '../../hooks/date/use-date-formatting';
 
 
 export default function TicketBody({ showId }) {
-    const [data, setData] = useState('');
+    const [data, setData] = useState([]);
     const location = useLocation();
     const { toDutchDate } = UseDateFormatting()
 
@@ -16,7 +16,7 @@ export default function TicketBody({ showId }) {
             const param = new URLSearchParams(location.search);
 
             axios
-                .get(`${process.env.REACT_APP_API}/api/show/${param.get("showid")}`)
+                .get(`${process.env.REACT_APP_API}/api/order/getorder?username=${localStorage.getItem("username")}`)
                 .then(response => {
                     if (response.status === 200) {
                         console.log(response.data);
@@ -55,40 +55,45 @@ export default function TicketBody({ showId }) {
                         </div>
                     </div>
                     <table>
-                        <tbody>
-                            <tr className="event-select fnt-normal selected secondary-bg-c">
-                                <td className="name">
-                                    Titel:
-                                    <td>{
-                                        data.event.name}
+                        {data.map(order => (
+                            <tbody>
+                                <br />
+                                <tr className="event-select fnt-normal selected secondary-bg-c">
+                                    <td className="name" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Titel:</span>
+                                            <td style={{ fontWeight: "normal" }} >{order.show.event.name}</td>
+                                        </td>
                                     </td>
-                                </td>
-                                <td className="price">
-                                    Prijs:
-                                    <td>
-                                        €{data.event.price}
+                                    <td className="price" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Prijs:</span>
+                                            <td style={{ fontWeight: "normal" }} > €{order.show.event.price}</td>
+                                        </td>
                                     </td>
-                                </td>
-                                <td className="date">
-                                    Datum:
-                                    <td>
-                                        {toDutchDate(data.dateAndTime)}
+                                    <td className="date" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Datum:</span>
+                                            <td style={{ fontWeight: "normal" }} >{toDutchDate(order.show.dateAndTime)}</td>
+                                        </td>
                                     </td>
-                                </td>
-                                <td className="description">
-                                    Beschrijving:
-                                    <td>
-                                        {data.description}
+                                    <td className="description" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Beschrijving:</span>
+                                            <td style={{ fontWeight: "normal" }} >{order.show.description}</td>
+                                        </td>
                                     </td>
-                                </td>
-                                <td className="amount">
-                                    Aantal Kaarten:
-                                    <td>
-                                        {data.description}
+                                    <td className="Ticket" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Aantal kaarten:</span>
+                                            <td style={{ fontWeight: "normal" }} >{order.ticketAmount}</td>
+                                        </td>
                                     </td>
-                                </td>
-                            </tr>
-                        </tbody>
+                                </tr>
+                                <br />
+                            </tbody>
+                        )
+                        )}
                     </table>
                 </div>
             }

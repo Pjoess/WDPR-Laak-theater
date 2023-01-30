@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { UseDateFormatting } from '../../hooks/date/use-date-formatting';
 
 
-export default function ProgrammingInfoBody({ showId }) {
+export default function ProgrammingInfoBody({ showId}) {
     const [data, setData] = useState('');
     const location = useLocation();
     const { toDutchDate } = UseDateFormatting()
@@ -19,7 +19,6 @@ export default function ProgrammingInfoBody({ showId }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const confirmation = `${quantity}`;
         setConfirmation(confirmation);
     }
 
@@ -29,7 +28,7 @@ export default function ProgrammingInfoBody({ showId }) {
             ShowId: `${param.get("showid")}`,
             UserName: localStorage.getItem("username")
         })
-            .then(response => console.log(response.data))
+            .then(response => setConfirmation(response.data.message))
             .catch(error => console.error(error));
     }
 
@@ -40,7 +39,6 @@ export default function ProgrammingInfoBody({ showId }) {
                 .get(`${process.env.REACT_APP_API}/api/show/${param.get("showid")}`)
                 .then(response => {
                     if (response.status === 200) {
-                        console.log(response.data);
                         setData(response.data)
                     } else {
                         throw new Error(response.status);
@@ -67,8 +65,8 @@ export default function ProgrammingInfoBody({ showId }) {
         <>
             {data &&
                 <div className='card-centered-container'>
-                    <div tabIndex="0" key={data.showId} className="card-centered" >
-                        <div key={data.showId}>
+                    <div tabIndex="0" key={data.orderId} className="card-centered" >
+                        <div key={data.orderId}>
                             <img src={data.image} alt={data.eventId} width="100%" height="100%" />
                         </div>
                         <table>
@@ -99,7 +97,7 @@ export default function ProgrammingInfoBody({ showId }) {
                                                 <br />
                                                 <input type="number" id="ticket-quantity" name="quantity" min="1" value={quantity} onChange={handleChange}/>
                                                 <button className='download-button3 shadow' type="submit" onClick={handlePost}>Koop kaartjes</button>
-                                                <Link to={`/tickets?showid=${data.id}`}>
+                                                <Link to={`/tickets`}>
                                                     <button className="download-button2 shadow" type="submit" alt="button naar om te doneren aan een goed doel">
                                                         Ga naar je ticket
                                                     </button>

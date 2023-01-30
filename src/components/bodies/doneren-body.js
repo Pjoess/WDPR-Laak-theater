@@ -41,20 +41,18 @@ export default function DonerenBody() {
 
 
     useEffect(() => {
-        // const queryParams = new URLSearchParams(location.search);
-        // setParameter(queryParams.get('goeddoel'));
+        const queryParams = new URLSearchParams(location.search);
+        setParameter(queryParams.get('goeddoel'));
 
-        window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=http://localhost:3000"
+        axios.defaults.headers.common["Authorization"] = `Bearer ${tokenString}`;
 
-        // axios.defaults.headers.common["Authorization"] = `Bearer ${tokenString}`;
-
-        // axios.get(`https://ikdoneer.azurewebsites.net/Toegang?url=http://localhost:3000${parameter}`,)
-        //     .then(response => {
-        //         setGoeddoel(response.data);
-        //     })
-        //     .catch(nietGelukt => {
-        //         console.log(nietGelukt);
-        //     });
+        axios.get(`https://ikdoneer.azurewebsites.net/api/goededoelen/${parameter}`,)
+            .then(response => {
+                setGoeddoel(response.data);
+            })
+            .catch(nietGelukt => {
+                console.log(nietGelukt);
+            });
     },);
 
 
