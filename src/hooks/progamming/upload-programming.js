@@ -39,7 +39,7 @@ export default function UploadProgramming(file) {
         });
         // Send a POST request to the API to import the data
         try {
-            await axios.post(`${process.env.REACT_APP_API}/api/Programming`, data);
+            await axios.post(`${process.env.REACT_APP_API}/api/Programming/import`, data);
             console.log('Data imported successfully!');
         } catch (error) {
             console.log(error);

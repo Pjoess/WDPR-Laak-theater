@@ -4,7 +4,7 @@ import { UseLoginSession } from "../../hooks/login/use-login-session"
 import { Cart } from "react-bootstrap-icons";
 
 function NavigationBar() {
-    const { user } = UseLoginSession()
+    const { user } = UseLoginSession();
     return(
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -49,7 +49,7 @@ function NavigationBar() {
                     </ul>
                     }
                     <ul className="navbar-nav text-right cart">
-                        <Link to="/cart"><Cart size="10x"/></Link>
+                        <Link to="/cart"><Cart size="2x"/></Link>
                     </ul>
                   </div>
                 </div>

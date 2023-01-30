@@ -13,17 +13,19 @@ function ArtistGroupJoinBody({ state, setState}) {
           <h1>Join Groups</h1>
         </div>
             
-        <div className="card  group-join-card">    
-            <div className="container">
+        
+        <div className="card  group-join-card">
+          <div className='container'>   
                 {cardData.map((data) => (
                 <GroupJoinSkeleton 
                   key={data.id}
+                  id={data.id}
                   name={data.name} 
                   description={data.description}
                   type={data.type}
                 />
                 ))}
-            </div>
+            </div> 
         </div>
 
         <div>

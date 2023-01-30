@@ -20,9 +20,10 @@ export default function ArtistPage(){
     return(
         <>
             <NavigationBar/>
-            <IndexHeader/>
+            
             {state === 'start' &&(
                 <>
+                    <IndexHeader/>
                     <IndexBody/>
                     <ArtistStartBody state={state} setState={setState}/>
                 </>
