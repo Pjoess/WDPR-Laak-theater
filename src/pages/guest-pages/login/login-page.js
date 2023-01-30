@@ -32,6 +32,7 @@ function LoginPage() {
 
     try {
       await login(username, password, captchaToken)
+      localStorage.setItem('username', username);
     } catch (error) {
       setError("Er is een fout opgetreden bij het inloggen.")
     }    

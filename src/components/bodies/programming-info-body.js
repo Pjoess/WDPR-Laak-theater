@@ -11,7 +11,7 @@ export default function ProgrammingInfoBody({ showId }) {
     const { toDutchDate } = UseDateFormatting()
     const [confirmation, setConfirmation] = useState('');
     const [quantity, setQuantity] = useState(1);
-
+    const param = new URLSearchParams(location.search);
 
     const handleChange = (event) => {
         setQuantity(event.target.value);
@@ -19,14 +19,15 @@ export default function ProgrammingInfoBody({ showId }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const confirmation = `Bedankt u heeft: ${quantity} tickets gekocht!`;
+        const confirmation = `${quantity}`;
         setConfirmation(confirmation);
     }
 
     function handlePost() {
-        axios.post(`${process.env.REACT_APP_API}/api/`, {
-            key1: 'value1',
-            key2: 'value2'
+        axios.post(`${process.env.REACT_APP_API}/api/order/makeOrder`, {
+            TicketAmount: quantity,
+            ShowId: `${param.get("showid")}`,
+            UserName: localStorage.getItem("username")
         })
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
@@ -34,7 +35,6 @@ export default function ProgrammingInfoBody({ showId }) {
 
     useEffect(() => {
         async function FetchShows() {
-            const param = new URLSearchParams(location.search);
 
             axios
                 .get(`${process.env.REACT_APP_API}/api/show/${param.get("showid")}`)
@@ -74,44 +74,45 @@ export default function ProgrammingInfoBody({ showId }) {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>{data.event.name}</td>
+                                    <td className='titel' style={{ fontWeight: "bold" }}>
+                                        <span style={{ padding: "12px" }}>Titel van de show:</span>
+                                        <td style={{ fontWeight: "normal" }} >{data.event.name}</td>
+                                    </td>
                                 </tr>
                                 <tr >
-                                    <td>{toDutchDate(data.dateAndTime)}</td>
+                                    <td className='datumTijd' style={{ fontWeight: "bold" }}>
+                                        <span style={{ padding: "12px" }}>Datum en tijd:</span>
+                                        <td style={{ fontWeight: "normal" }} >{toDutchDate(data.dateAndTime)}</td>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>{data.description}</td>
+                                    <td className='datumTijd' style={{ fontWeight: "bold" }}>
+                                        <span style={{ padding: "12px" }}>Show beschrijving</span>
+                                        <td style={{ fontWeight: "normal" }} >{data.description}</td>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <div className='ticket-container'>
-                                            <form onSubmit={handleSubmit}>
-                                                <label htmlFor="ticket-quantity">Aantal kaartjes: </label>
-                                                <input
-                                                    type="number"
-                                                    id="ticket-quantity"
-                                                    name="quantity"
-                                                    min="1"
-                                                    value={quantity}
-                                                    onChange={handleChange}
-                                                />
+                                            <form onSubmit={handleSubmit} style={{ padding: "12px" }}>
+                                                <label htmlFor="ticket-quantity" style={{ fontWeight: "bold"} }>Aantal kaartjes: </label>
+                                                <br />
+                                                <input type="number" id="ticket-quantity" name="quantity" min="1" value={quantity} onChange={handleChange}/>
                                                 <button className='download-button3 shadow' type="submit" onClick={handlePost}>Koop kaartjes</button>
-                                                {confirmation && <p>{confirmation}</p>}
                                                 <Link to={`/tickets?showid=${data.id}`}>
                                                     <button className="download-button2 shadow" type="submit" alt="button naar om te doneren aan een goed doel">
                                                         Ga naar je ticket
                                                     </button>
                                                 </Link>
+                                                {confirmation && <p>{confirmation}</p>}
                                             </form>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
-
             }
 
         </>
