@@ -89,6 +89,12 @@ export default function TicketBody({ showId }) {
                                             <td style={{ fontWeight: "normal" }} >{order.ticketAmount}</td>
                                         </td>
                                     </td>
+                                    <td className="Aanwezigheid" style={{ fontWeight: "bold" }}>
+                                        <td>
+                                            <span style={{ padding: "12px" }}>Aanwezigheid:</span>
+                                            <td style={{ fontWeight: "normal" }} >{order.visited}</td>
+                                        </td>
+                                    </td>
                                 </tr>
                                 <br />
                             </tbody>
