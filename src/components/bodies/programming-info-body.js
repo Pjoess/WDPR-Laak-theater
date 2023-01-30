@@ -23,7 +23,7 @@ export default function ProgrammingInfoBody({ showId}) {
     }
 
     function handlePost() {
-        axios.post(`${process.env.REACT_APP_API}/api/order/makeOrder`, {
+        axios.post(`${process.env.REACT_APP_API}/api/order/createOrder`, {
             TicketAmount: quantity,
             ShowId: `${param.get("showid")}`,
             UserName: localStorage.getItem("username")
