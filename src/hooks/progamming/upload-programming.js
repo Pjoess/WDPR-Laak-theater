@@ -36,10 +36,13 @@ export default function UploadProgramming(file) {
                 EventId: cells[0],
                 RoomId: cells[1],
                 DateAndTime: cells[2],
+                Image: cells[3],
+                Description: cells[4],
             }
         });
         // Send a POST request to the API to import the data
         try {
+            console.log(data);
             await axios.post(`${process.env.REACT_APP_API}/api/Programming/import`, data);
             console.log('Data imported successfully!');
         } catch (error) {

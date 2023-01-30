@@ -7,7 +7,7 @@ export default function GetBands() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API}/api/bands`);
+        const response = await axios.get(`${process.env.REACT_APP_API}/api/group/group`);
         setCardData(response.data);
       } catch (error) {
         console.error(error);

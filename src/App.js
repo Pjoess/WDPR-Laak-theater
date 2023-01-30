@@ -18,7 +18,8 @@ import UserManagementPage from "./pages/admin-pages/user/user-management";
 import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
 import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
 import ArtistPage from "./pages/universal-logged-in-pages/artist/artist-page"
-
+import Artists from "./pages/employee-pages/artist/artists"
+import Bands from "./pages/employee-pages/band/bands"
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         {/*--------------------*/}
         <Route path="programma" element={<ProgrammingPage/>} />
         <Route path="employee" element={<EmployeePage/>}/>
+        <Route path="employee/artist" element={<Artists/>}/>
+        <Route path="employee/group" element={<Bands/>}/>
         {/* <Route path="artists" element={<ArtistPage/>}/> */}
         <Route path="bands" element={<BandsPage/>}/>
         {/* Admin section */}
