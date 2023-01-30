@@ -1,0 +1,95 @@
+.container{
+    margin: 0px;
+    padding:0px;
+}
+
+.Agenda-info{
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #E2E2E2;
+    align-items: center;
+}
+.Agenda-info .programming-box{
+    padding: 6%;
+    margin: 4% 6%;
+    background-color: #D3BBB9;
+    height: fit-content;
+}
+.Agenda-info .agenda{
+    width: 100%;
+    height: 10rem;
+    background-color: #950D44;
+}
+.Agenda-info .container-fluid{
+    align-items: center;
+}
+.test{
+    font-size: 16px;
+    line-height: 18px;
+    padding: 15px 12px;
+    cursor: pointer;
+    vertical-align: middle;
+    background-color: aqua;
+}
+
+.secondary-bg-c{
+    background-color: #1a242f;
+    color: #ffffff;
+}
+
+.event-select td.name{
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 15px 12px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#event-select .name{
+    width: 40%;
+}
+
+.event-select td {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 15px 12px;
+    cursor: pointer;
+    vertical-align: middle;
+
+}
+/* 
+.ticket {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+  
+  h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */

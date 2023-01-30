@@ -8,17 +8,19 @@ import { Link } from 'react-router-dom'
 
 
 
-function FetchData() {
+export default function FetchData() {
   const [data, setData] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const { toDutchDate } = UseDateFormatting()
   const [filteredData, setFilteredData] = useState(data);
   const [selectedOption, setSelectedOption] = useState('');
   const options = [
-    { label: 'Dit is een voorbeeld', value: 'toneel' },
-    { label: 'Voorbeeld 2', value: 'show' },
-    { label: 'Voorbeeld 3', value: 'nog iets' },
+    { label: 'Genre', value: 'toneel' },
+    { label: 'Toneel', value: 'show' },
+    { label: 'Dansen', value: 'nog iets' },
+    { label: 'Muziektheater', value: 'nog iets' },
+    { label: 'Show', value: 'nog iets' },
   ];
 
 
@@ -53,14 +55,14 @@ function FetchData() {
   }, []);
 
 
-  const handleSearch = event => {
-    setSearchValue(event.target.value);
-    setFilteredData(
-      data.filter(item =>
-        item.Name.toLowerCase().includes(searchValue.toLowerCase())
-      )
-    );
-  };
+  // const handleSearch = event => {
+  //   setSearchValue(event.target.value);
+  //   setFilteredData(
+  //     data.filter(item =>
+  //       item.Name.toLowerCase().includes(searchValue.toLowerCase())
+  //     )
+  //   );
+  // };
 
   const handleDateChange = date => {
     setSelectedDate(date);
@@ -82,9 +84,9 @@ function FetchData() {
         <div className='datepicker'>
           <DatePicker placeholderText='Filter op datum' selected={selectedDate} onChange={(date) => { handleDateChange(date); setSelectedDate(date); }} />
         </div>
-        <form>
+        {/* <form>
           <input className='search' type="text" placeholder="Search" value={searchValue} onChange={handleSearch} />
-        </form>
+        </form> */}
         <select className='selectedoption' value={selectedOption} onChange={(e) => handleOptionSelect(e.target.value)}>
           {options.map((option, index) => (
             <option key={index} value={option.value}>{option.label}</option>
@@ -119,4 +121,3 @@ function FetchData() {
   );
 }
 
-export default FetchData;

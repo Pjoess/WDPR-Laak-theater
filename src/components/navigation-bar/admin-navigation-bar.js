@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import {UseLoginSession} from "../../hooks/login/use-login-session";
 
 function AdminNavigationbar() {
+    const { user } = UseLoginSession();
     return (
         <Navbar bg="light" expand="lg">
             <Navbar.Brand href="/admin">Administratie</Navbar.Brand>
@@ -13,10 +15,12 @@ function AdminNavigationbar() {
                     <Link to="/admin/medewerkers" className="nav-link">Medewerkers</Link>
                 </Nav>
             </Navbar.Collapse>
-            <Navbar.Text id="currentuser" className="text-right">
-                U bent ingelogd als: Placeholder
-            </Navbar.Text>
-            <Nav.Link href="/logout">Log uit</Nav.Link>
+            <ul className="navbar-nav text-right user">
+                <span id="currentuser" className="navbar-text">U bent ingelogd als: {user} </span>
+                <li className="nav-item">
+                    <Link to="/logout" className="nav-link">Log uit</Link>
+                </li>
+            </ul>
         </Navbar>
     );
 }
