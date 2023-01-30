@@ -35,7 +35,7 @@ export default function DonatieGoeddoelBody() {
                         <div className="card-content">
                             <h2 className="card-title">{item.naam}</h2>
                             <p className="card-text">{item.description}</p>
-                            <Link to="/doneren?goeddoel=${item.id}">
+                            <Link to={`/doneren?goeddoel=${item.id}`}>
                                 <button className="download-button1 shadow" type="button" alt="button naar om te doneren aan een goed doel">
                                 Doneer
                                 </button>

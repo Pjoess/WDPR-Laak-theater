@@ -24,7 +24,7 @@ export default function IndexHeader() {
                         </p>
                     </div>
                     <div className="col-12 header-item">
-                        <Link to="../donatie">
+                        <Link to={`https://ikdoneer.azurewebsites.net/toegang?url=${process.env.REACT_APP_API}/api/betalings/toegang`}>
                             <button className="btn btn-outline-light btn-lg download-button shadow" type="button" alt="doneer link"  >
                                 <CashCoin /> Doneer
                             </button>
