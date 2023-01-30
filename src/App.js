@@ -16,7 +16,7 @@ import AdminPage from "./pages/admin-pages/admin/admin-page";
 import RoomManagementPage from "./pages/admin-pages/room/room-management";
 import UserManagementPage from "./pages/admin-pages/user/user-management";
 import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
-import SeatPickerPage from "./components/widgets/seat-picker/seat-picker-page"
+import SeatPickerPage from "./pages/guest-pages/seat-picker/seat-picker-page"
 import DonatiePage from "../src/pages/donor/donatie-page"
 import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
 import DonerenPage from "../src/pages/donor/doneren-page"
