@@ -22,3 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /.idea/discord.xml
+/.idea/.gitignore
+/.idea/laaktheater.iml
+/.idea/modules.xml
+/.idea/vcs.xml

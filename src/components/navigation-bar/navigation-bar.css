@@ -2,6 +2,7 @@
 .navbar{
     background-color: white;
     font-family: 'Montserrat', sans-serif;
+    
 }
 .user{
     float: right;
@@ -33,7 +34,9 @@
     margin: 5px 20px 5px 10px;
     width: 40px;
     height: auto;
+
 }
 .logo{
     padding: 0;
+    
 }

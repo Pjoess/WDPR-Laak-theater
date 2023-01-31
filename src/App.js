@@ -1,26 +1,37 @@
 import "./App.css"
 import { Routes, Route } from "react-router-dom"
-import ContactPage from "./pages/contact/contact-page"
-import SignUpPage from "./pages/sign-up/sign-up-page"
+import ContactPage from "./pages/guest-pages/contact/contact-page"
+import SignUpPage from "./pages/guest-pages/sign-up/sign-up-page"
 import CartPage from "./pages/cart/cart-page"
-import IndexPage from "./pages/index/index-page"
-import AboutUs from "./pages/about-us/about-us-page"
-import Tickets from "./pages/ticket/ticket-page"
-import LoginPage from "./pages/login/login-page"
-import Programming from "./pages/programming/programming"
-import EmployeeBoard from "./pages/employee/employee"
-import CardContainerArtists from "./pages/employee/artists"
-import CardContainerBands from "./pages/employee/bands"
-import LogoutPage from "./pages/logout/logout-page"
-import AdminPage from "./admin-pages/admin/admin-page";
-import RoomManagement from "./admin-pages/room/room-management";
-import UserManagement from "./admin-pages/user/user-management";
-import EmployeeManagement from "./admin-pages/employee/employee-management";
-import DonationList from "./admin-pages/donation/donation-list";
-import DonationUserManagement from "./admin-pages/donation/donation-user-management";
+import IndexPage from "./pages/guest-pages/index/index-page"
+import AboutUsPage from "./pages/guest-pages/about-us/about-us-page"
+import Tickets from "./pages/guest-pages/ticket/ticket-page"
+import LoginPage from "./pages/guest-pages/login/login-page"
+import ProgrammingPage from "./pages/guest-pages/programming/programming"
+import EmployeePage from "./pages/employee-pages/employee/employee"
+import ArtistPage from "./pages/employee-pages/artist/artists"
+import BandsPage from "./pages/employee-pages/band/bands"
+import LogoutPage from "./pages/universal-logged-in-pages/logout/logout-page"
+import AdminPage from "./pages/admin-pages/admin/admin-page";
+import RoomManagementPage from "./pages/admin-pages/room/room-management";
+import UserManagementPage from "./pages/admin-pages/user/user-management";
+import EmployeeManagementPage from "./pages/admin-pages/employee/employee-management";
+import SeatPickerPage from "./pages/guest-pages/seat-picker/seat-picker-page"
+import DonatiePage from "../src/pages/donor/donatie-page"
+import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
+import DonerenPage from "../src/pages/donor/doneren-page"
+import BetalingPage from "./pages/donor/betaling-page"
+import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
+import {useState} from "react";
+import CodeValidation from "./pages/employee-pages/code-validation/code-validation";
+import OrderPlaced from "./pages/order-placed/order-placed"
+
+
+
 
 
 function App() {
+
   return (
     <div className="App">
       <Routes>
@@ -28,27 +39,33 @@ function App() {
         <Route path="/" element={<IndexPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="aboutus" element={<AboutUs />} />
+        <Route path="over-ons" element={<AboutUsPage/>} />
         <Route path="tickets" element={<Tickets />} />
+        <Route path="programminginfo" element={<ProgrammingInfo />} />
+        {/* /* Donor section */}
+        <Route path="donatie" element={<DonatiePage />} />
+        <Route path="donatie-goeddoel" element={<DonatieGoeddoelPage />} />
+        <Route path="doneren" element={<DonerenPage />} />
+        <Route path="betaling" element={<BetalingPage />} />
         {/* Guest only section*/}
-        <Route path="signup" element={<SignUpPage />} />
+        <Route path="registreer" element={<SignUpPage />} />
         <Route path="login" element={<LoginPage />} />
-        {/* Logged-in user only*/}
+        {/* Universal Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
-        {/*<Route path="seatpicker/:showId" element={<SeatPickerPage />} />*/}
+        <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
+        <Route path="bestelling-gelukt" element={<OrderPlaced />} />
         {/*--------------------*/}
-        <Route path="programma" element={<Programming />} />
-        <Route path="employee" element={<EmployeeBoard/>}/>
-        <Route path="artists" element={<CardContainerArtists/>}/>
-        <Route path="bands" element={<CardContainerBands/>}/>
+        <Route path="programma" element={<ProgrammingPage/>} />
+        <Route path="medewerker" element={<EmployeePage/>}/>
+        <Route path="medewerker/artists" element={<ArtistPage/>}/>
+        <Route path="medewerker/bands" element={<BandsPage/>}/>
+        <Route path="medewerker/code-validatie" element={<CodeValidation/>}/>
         {/* Admin section */}
-        <Route path="admin" element={<AdminPage/>}/>
-        <Route path="admin/zalen" element={<RoomManagement/>}/>
-        <Route path="admin/gebruikers" element={<UserManagement/>}/>
-        <Route path="admin/medewerkers" element={<EmployeeManagement/>}/>
-        <Route path="admin/donaties" element={<DonationList/>}/>
-        <Route path="admin/donateurs" element={<DonationUserManagement/>}/>
-        {/*<Route path="/admin/gebruikers/:id" component={EditUser} />*/}
+        <Route path="admin" element={ <AdminPage/>}/>
+        <Route path="admin/zalen" element={<RoomManagementPage/>}/>
+        <Route path="admin/gebruikers" element={<UserManagementPage/> }/>
+        <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
+        {/* <Route path="*" element={}/> voor een not found page */}
       </Routes>
     </div>
   )

@@ -1,8 +1,6 @@
 import axios from "axios";
 
- 
-
-export default function handleImport(file) {
+export default function UploadProgramming(file) {
     var XLSX = require("xlsx");
 
     if (!file) {
@@ -41,7 +39,7 @@ export default function handleImport(file) {
         });
         // Send a POST request to the API to import the data
         try {
-            await axios.post('http://synchronicity.ddns.net:7002/api/Programming', data);
+            await axios.post(`${process.env.REACT_APP_API}/api/Programming`, data);
             console.log('Data imported successfully!');
         } catch (error) {
             console.log(error);

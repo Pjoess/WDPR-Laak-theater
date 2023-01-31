@@ -1,13 +1,11 @@
 
-/* Header */
 .Header{
     height: auto;
 }
 #texthead{
     padding: 2rem 10%;
-    /* padding: 2rem 7%; */
-    background-image: url("../../../public/images/header.png");
-    height: 900px;
+    background-image: url('../../../public/images/header.png');
+    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -34,7 +32,3 @@
     vertical-align:top;
     margin-right: 0px;
 }
-/* #index-header-text{
-    width: 400px;
-} */
-

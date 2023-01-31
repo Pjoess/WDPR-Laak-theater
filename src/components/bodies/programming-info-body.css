@@ -1,0 +1,76 @@
+.card-centered-container {
+  display: flex;
+  align-items: left;
+  justify-content: left; /* change this line */
+  flex-wrap: wrap;
+}
+
+.card-centered{
+  margin: 100px;
+  width: 40%;
+  min-width: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-centeredimg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-centered td {
+  padding: 12px;
+}
+
+.card-centered:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.download-button3 {
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.download-button3:hover {
+  border-color: #4CAF50;
+  background-color: #4CAF50;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+.download-button2 {
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.download-button2:hover {
+  border-color: pink;
+  background-color: pink;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.TicketButton-container {
+  display: flex;
+  align-items: right;
+  justify-content: right; /* change this line */
+  flex-wrap: wrap;
+}
