@@ -2,7 +2,7 @@
 .navbar{
     background-color: white;
     font-family: 'Montserrat', sans-serif;
-    
+
 }
 .user{
     float: right;
@@ -32,11 +32,17 @@
 /* Logo */
 .navbar img{
     margin: 5px 20px 5px 10px;
-    width: 40px;
+    width: 10px;
     height: auto;
 
 }
 .logo{
     padding: 0;
-    
+
+}
+
+.cart{
+    color: black;
+    height:20px;
+    width: auto;
 }

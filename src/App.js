@@ -9,7 +9,6 @@ import Tickets from "./pages/guest-pages/ticket/ticket-page"
 import LoginPage from "./pages/guest-pages/login/login-page"
 import ProgrammingPage from "./pages/guest-pages/programming/programming"
 import EmployeePage from "./pages/employee-pages/employee/employee"
-import ArtistPage from "./pages/employee-pages/artist/artists"
 import BandsPage from "./pages/employee-pages/band/bands"
 import LogoutPage from "./pages/universal-logged-in-pages/logout/logout-page"
 import AdminPage from "./pages/admin-pages/admin/admin-page";
@@ -22,13 +21,9 @@ import DonatieGoeddoelPage from "../src/pages/donor/donatie-goeddoel-page"
 import DonerenPage from "../src/pages/donor/doneren-page"
 import BetalingPage from "./pages/donor/betaling-page"
 import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
-import {useState} from "react";
+import ArtistPage from "./pages/universal-logged-in-pages/artist/artist-page"
+import OrderPlaced from "./pages/order-placed/order-placed";
 import CodeValidation from "./pages/employee-pages/code-validation/code-validation";
-import OrderPlaced from "./pages/order-placed/order-placed"
-
-
-
-
 
 function App() {
 
@@ -53,6 +48,7 @@ function App() {
         {/* Universal Logged-in user only*/}
         <Route path="logout" element={<LogoutPage/>}/>
         <Route path="seatpicker/:showId" element={<SeatPickerPage />} />
+        <Route path="artist" element={<ArtistPage/>}/>
         <Route path="bestelling-gelukt" element={<OrderPlaced />} />
         {/*--------------------*/}
         <Route path="programma" element={<ProgrammingPage/>} />

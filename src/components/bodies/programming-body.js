@@ -1,10 +1,11 @@
 import React from "react";
 import './programming.css'
-// import UseProgramming from "../../hooks/progamming/use-programming";
+import UseProgramming from "../../hooks/progamming/use-programming";
+
 
 export default function ProgrammingBody() {
-    // const { data, state, handleSubmit, handleChange } = UseProgramming(); de state, handlesubmit en handle change wordt niet gebruikt..
-    // const { data } = UseProgramming();
+/*    const { data, state, handleSubmit, handleChange } = UseProgramming();
+    const { data } = UseProgramming();*/
 
     return(
         <>
