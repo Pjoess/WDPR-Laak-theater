@@ -1,17 +1,16 @@
 import React from 'react'
-import AdminNavigationbar from "../../../components/navigation-bar/admin-navigation-bar";
 import MinimalFooter from "../../../components/footer/minimal-footer";
 import {Table} from "react-bootstrap";
 import {DeleteButton, EditButton} from "../../../components/widgets/button/button";
-import {GetEmployees, GetUsers} from "../../../hooks/admin/get-users";
-
+import {GetEmployees} from "../../../hooks/admin/get-users";
+import AdminNavigationBar from "../../../components/navigation-bar/admin-navigation-bar";
 
 function EmployeeManagement() {
     const { userData } = GetEmployees();
 
     return(
         <div>
-            <AdminNavigationbar/>
+            <AdminNavigationBar/>
             <div className="container my-5">
                 <Table striped bordered hover>
                     <thead>
@@ -19,7 +18,6 @@ function EmployeeManagement() {
                         <th>ID</th>
                         <th>Gebruikersnaam</th>
                         <th>Naam</th>
-                        <th>Rol</th>
                         <th>Acties</th>
                     </tr>
                     </thead>
@@ -34,7 +32,6 @@ function EmployeeManagement() {
                                 <td>{user.id}</td>
                                 <td>{user.userName}</td>
                                 <td>{user.name}</td>
-                                <td>{user.role}</td>
                                 <td>
                                     <EditButton />
                                     <DeleteButton />

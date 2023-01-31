@@ -13,7 +13,7 @@ export function UseLoginSession() {
 
   useEffect(() => {
     const token = localStorage.getItem("jwt")
-    if (token && !user) {
+    if (token) {
       setUser(jwtDecode(token))
     }
   }, [])
@@ -34,7 +34,7 @@ export function UseLoginSession() {
           localStorage.setItem("jwt", response.data.token);
           const decoded = jwtDecode(response.data.token);
           const roles = decoded[ClaimTypes.Role];
-          setUser({user: user, roles: roles});
+          setUser({roles: roles});
         }
         axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
         if (user === "Admin"){
@@ -59,5 +59,5 @@ export function UseLoginSession() {
     navigate("/")
   }
 
-  return { user, loading, error, login, logout }
+  return { user, loading, error, login, logout, ClaimTypes }
 }

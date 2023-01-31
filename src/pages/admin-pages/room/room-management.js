@@ -1,11 +1,11 @@
 import React from 'react'
-import AdminNavigationbar from "../../../components/navigation-bar/admin-navigation-bar";
 import MinimalFooter from "../../../components/footer/minimal-footer";
+import AdminNavigationBar from "../../../components/navigation-bar/admin-navigation-bar";
 
 function RoomManagement() {
     return(
         <div>
-            <AdminNavigationbar/>
+            <AdminNavigationBar/>
             <MinimalFooter/>
         </div>
     );

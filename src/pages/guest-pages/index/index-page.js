@@ -7,7 +7,6 @@ import IndexBody from "../../../components/bodies/index-body";
 export default function IndexPage(){
     return(
         <div>
-
             <section className="Header">
                 <NavigationBar/>
                 <IndexHeader/>

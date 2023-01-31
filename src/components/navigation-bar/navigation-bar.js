@@ -4,6 +4,8 @@ import { UseLoginSession } from "../../hooks/login/use-login-session"
 
 function NavigationBar() {
     const { user } = UseLoginSession()
+
+
     return(
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
