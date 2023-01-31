@@ -23,6 +23,7 @@ import DonerenPage from "../src/pages/donor/doneren-page"
 import BetalingPage from "./pages/donor/betaling-page"
 import ProgrammingInfo from "./pages/guest-pages/programming/progamming-info"
 import {useState} from "react";
+import CodeValidation from "./pages/employee-pages/code-validation/code-validation";
 import OrderPlaced from "./pages/order-placed/order-placed"
 
 
@@ -30,12 +31,6 @@ import OrderPlaced from "./pages/order-placed/order-placed"
 
 
 function App() {
-
-  const [userRoles, setUserRoles] = useState([])
-
-  const updateUserRoles = (roles) => {
-    setUserRoles(roles)
-  }
 
   return (
     <div className="App">
@@ -61,14 +56,15 @@ function App() {
         <Route path="bestelling-gelukt" element={<OrderPlaced />} />
         {/*--------------------*/}
         <Route path="programma" element={<ProgrammingPage/>} />
-        <Route path="employee" element={<EmployeePage/>}/>
-        <Route path="artists" element={<ArtistPage/>}/>
-        <Route path="bands" element={<BandsPage/>}/>
+        <Route path="medewerker" element={<EmployeePage/>}/>
+        <Route path="medewerker/artists" element={<ArtistPage/>}/>
+        <Route path="medewerker/bands" element={<BandsPage/>}/>
+        <Route path="medewerker/code-validatie" element={<CodeValidation/>}/>
         {/* Admin section */}
-        <Route path="admin" element={userRoles.includes("admin") ? <AdminPage/> : null}/>
-        <Route path="admin/zalen" element={ userRoles.includes("admin") ?<RoomManagementPage/> : null}/>
-        <Route path="admin/gebruikers" element={ userRoles.includes("admin") ?<UserManagementPage/> : null}/>
-        <Route path="admin/medewerkers" element={userRoles.includes("admin") ? <EmployeeManagementPage/> : null}/>
+        <Route path="admin" element={ <AdminPage/>}/>
+        <Route path="admin/zalen" element={<RoomManagementPage/>}/>
+        <Route path="admin/gebruikers" element={<UserManagementPage/> }/>
+        <Route path="admin/medewerkers" element={<EmployeeManagementPage/>}/>
         {/* <Route path="*" element={}/> voor een not found page */}
       </Routes>
     </div>

@@ -3,7 +3,6 @@ import { Navbar, Nav } from 'react-bootstrap';
 import {UseLoginSession} from "../../hooks/login/use-login-session";
 
 function AdminNavigationbar() {
-    const { user } = UseLoginSession();
     return (
         <Navbar bg="light" expand="lg">
             <Navbar.Brand href="/admin">Administratie</Navbar.Brand>
@@ -16,7 +15,7 @@ function AdminNavigationbar() {
                 </Nav>
             </Navbar.Collapse>
             <ul className="navbar-nav text-right user">
-                <span id="currentuser" className="navbar-text">U bent ingelogd als: {user} </span>
+                <span id="currentuser" className="navbar-text">U bent ingelogd als: Dit is een " admin " </span>
                 <li className="nav-item">
                     <Link to="/logout" className="nav-link">Log uit</Link>
                 </li>

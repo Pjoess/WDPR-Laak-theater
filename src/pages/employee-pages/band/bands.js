@@ -2,12 +2,14 @@ import React from 'react';
 import GetBands from '../../../hooks/employee/get-bands';
 import CardSkeleton from '../../../components/widgets/card-skeleton';
 import {Link} from "react-router-dom";
+import EmployeeNavigationBar from "../../../components/navigation-bar/employee.navigation-bar";
 
 function Bands() {
     const { cardData } = GetBands();
   
     return (
       <>
+        <EmployeeNavigationBar/>
       <div>
         <h1>Bands</h1>
       </div>

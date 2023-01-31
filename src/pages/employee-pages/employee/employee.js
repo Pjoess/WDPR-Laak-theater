@@ -2,6 +2,7 @@ import React from "react";
 import handleImport from "../../../hooks/progamming/use-programming";
 import { useState } from "react";
 import './employee.css'
+import EmployeeNavigationBar from "../../../components/navigation-bar/employee.navigation-bar";
 
 export default function EmployeeBoard(){
   const [file, setFile] = useState(null);
@@ -12,40 +13,7 @@ export default function EmployeeBoard(){
 
     return(
         <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="employee-pages/employee#">My Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="employee-pages/employee#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="employee-pages/employee#">Action</a></li>
-                <li><a className="dropdown-item" href="employee-pages/employee#">Another action</a></li>
-                <li><hr className="dropdown-divider"/></li>
-                <li><a className="dropdown-item" href="employee-pages/employee#">Something else here</a></li>
-              </ul>
-            </li>
-              <li className="nav-item">
-                <a className="nav-link" href="employee-pages/employee#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="employee-pages/employee#">Artists</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="employee-pages/employee#">Shows</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="employee-pages/employee#">Bands</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        
+        <EmployeeNavigationBar/>
         <div className="bodyEmployee">
         <div className="container text-center cards">
 
