@@ -10,6 +10,7 @@ export default function UploadProgramming(file) {
     // Check if the file is a CSV or Excel file
     if (file.type !== "text/csv" && file.type !== "application/vnd.ms-excel") {
         console.error("Invalid file type. Only CSV and Excel files are allowed.");
+        alert("Het bestand dat u heeft ingevoerd is geen: csv of Excel bestand")
         return;
     }
     // Use the FileReader API to read the contents of the file
@@ -35,11 +36,14 @@ export default function UploadProgramming(file) {
                 EventId: cells[0],
                 RoomId: cells[1],
                 DateAndTime: cells[2],
+                Image: cells[3],
+                Description: cells[4],
             }
         });
         // Send a POST request to the API to import the data
         try {
-            await axios.post(`${process.env.REACT_APP_API}/api/Programming`, data);
+            console.log(data);
+            await axios.post(`${process.env.REACT_APP_API}/api/Programming/import`, data);
             console.log('Data imported successfully!');
         } catch (error) {
             console.log(error);

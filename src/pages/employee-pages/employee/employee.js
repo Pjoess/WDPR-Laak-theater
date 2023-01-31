@@ -2,6 +2,7 @@ import React from "react";
 import handleImport from "../../../hooks/progamming/use-programming";
 import { useState } from "react";
 import './employee.css'
+import UploadProgramming from "../../../hooks/progamming/upload-programming";
 import EmployeeNavigationBar from "../../../components/navigation-bar/employee.navigation-bar";
 
 export default function EmployeeBoard(){
@@ -25,7 +26,7 @@ export default function EmployeeBoard(){
                 <h5 className="card-title">Invoeren excel sheet</h5>
                 <div className="form">
                     <input type="file" accept=".csv" onChange={handleFileChange} />
-                    <button onClick={() => handleImport(file)}>Upload</button>
+                    <button onClick={() => UploadProgramming(file)}>Upload</button>
                 </div>
                 <a href="employee-pages/employee#" className="btn btn-outline-light btn-md download-button shadow">Go somewhere</a>
                 </div>
